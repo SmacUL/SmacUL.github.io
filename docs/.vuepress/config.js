@@ -6,6 +6,7 @@ module.exports = {
         nav: [
             { text: 'Home', link: '/' },
             { text: 'Project', link: '/project/' },
+            { text: 'About Me', link: '/self/'},
             // { text: 'External', link: 'https://baidu.com' },
         ],
         sidebar: {
@@ -53,7 +54,7 @@ module.exports = {
                 ['文档阅读', '文档阅读']
             ],
             '/tool/mysql/': [
-                // '',
+                '',
                 ['SQL 关系操作', 'SQL 关系操作'],
                 ['Mysql 数据类型', 'Mysql 数据类型'],
             ],
@@ -81,13 +82,17 @@ module.exports = {
                 ['springMVC2', 'SpringMVC2'],
                 ['springMVC3', 'SpringMVC3'],
             ],
-
+            '/tool/vuepress/': [
+                '',
+                ['快速开始', '感受 Vuepress'],
+                ['部署到 Github Page', '部署到 Github Page'],
+                ['简单装修', '简单装修']
+            ],
             '/': [
                 '',
             ],
         },
-            
-
+        
         sidebarDepth : 2
       }
 }

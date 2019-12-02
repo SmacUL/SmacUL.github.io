@@ -1,10 +1,11 @@
 ---
 home: true
 # heroImage: /hero.png
-heroText: 'こんにちは'
+heroText: 关于我
+
 # tagline: 
-actionText: PROJECT →
-actionLink: /project/
+# actionText: PROJECT →
+# actionLink: /project/
 # features:
 # - title: 简洁至上
 #   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
@@ -14,22 +15,5 @@ actionLink: /project/
 #   details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
-<!-- ceshi -->
-<!-- # Log -->
 
-# 语言
-- [Java](./lang/java)
-- [JS](./lang/js)
-
-# Web 基础
-- [CSS](./web/css)
-
-# 工具
-- [Mysql](./tool/mysql)
-- [Webpack](./tool/webpack/文档阅读)
-- [Git](./tool/git/Git)
-- [Maven](./tool/maven/Maven)
-- [Spring](./tool/spring)
-- [MyBatis](./tool/mybatis/MyBatis)
-- [Hibernate](./tool/hibernate/Hibernate)
-- [Vuepress](./tool/vuepress)
+<!-- # 关于我 -->
