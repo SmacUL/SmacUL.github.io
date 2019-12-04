@@ -12,15 +12,17 @@ module.exports = {
         sidebar: {
             '/project/': [
                 '',
-                'TestA',
+                ['TestA', '新闻推荐系统'],
                 'TestB',
                 ['TestC', 'TesdddtC']
             ],
             '/web/css/': [
                 '',
                 ['Layout', '布局'],
-                ['Font', '文字'],
-                ['Selector', '选择器']
+                // ['可伸缩式布局', '可伸缩式布局'],
+                ['Selector', '选择器'],
+                ['继承与优先级', '继承与优先级'],
+                ['限制作用域', '限制作用域'],
             ],
             '/lang/js/': [
                 '',
@@ -86,7 +88,8 @@ module.exports = {
                 '',
                 ['快速开始', '感受 Vuepress'],
                 ['部署到 Github Page', '部署到 Github Page'],
-                ['简单装修', '简单装修']
+                ['简单装修', '简单装修'],
+                ['Vuepress 的伴侣', 'Vuepress 的伴侣']
             ],
             '/': [
                 '',
