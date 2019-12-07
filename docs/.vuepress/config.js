@@ -1,8 +1,11 @@
 module.exports = {
     title: "SmacUL's Blog",
-    description: 'NOTE / LOG',
+    description: 'こんにちは',
+    markdown: {
+        lineNumbers: true
+    },
     themeConfig: {
-        logo: '/assets/img/Logo.png',
+        // logo: '/assets/img/Logo.png',
         nav: [
             { text: 'Home', link: '/' },
             { text: 'Project', link: '/project/' },
@@ -12,9 +15,10 @@ module.exports = {
         sidebar: {
             '/project/': [
                 '',
+                // ['Python 爬虫--框架', 'Python 爬虫--框架']
                 ['TestA', '新闻推荐系统'],
-                'TestB',
-                ['TestC', 'TesdddtC']
+                // 'TestB',
+                // ['TestC', 'TesdddtC']
             ],
             '/web/css/': [
                 '',

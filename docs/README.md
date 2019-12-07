@@ -1,7 +1,7 @@
 ---
 home: true
-# heroImage: /hero.png
-heroText: 'こんにちは'
+heroImage: '/assets/img/Logo.png'
+heroText: "SmacUL's NOTE / LOG"
 # tagline: 
 actionText: PROJECT →
 actionLink: /project/
@@ -16,7 +16,6 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 <!-- ceshi -->
 <!-- # Log -->
-
 # 语言
 - [Java](./lang/java)
 - [JS](./lang/js)
@@ -33,3 +32,5 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 - [MyBatis](./tool/mybatis/MyBatis)
 - [Hibernate](./tool/hibernate/Hibernate)
 - [Vuepress](./tool/vuepress)
+
+# Log
