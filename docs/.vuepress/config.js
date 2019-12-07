@@ -1,6 +1,9 @@
 module.exports = {
     title: "SmacUL's Blog",
     description: 'こんにちは',
+    head: [
+        ['link', { rel: 'icon', href: '/assets/img/Logo.png' }]
+    ],
     markdown: {
         lineNumbers: true
     },
@@ -8,10 +11,14 @@ module.exports = {
         // logo: '/assets/img/Logo.png',
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Project', link: '/project/' },
-            { text: 'About Me', link: '/self/'},
+            { text: 'Project', link: '/project/', target:'_blank'},
+            { text: 'About Me', link: '/self/', target:'_blank'},
             // { text: 'External', link: 'https://baidu.com' },
         ],
+
+        sidebarDepth : 2,
+        lastUpdated: 'Last Updated',
+
         sidebar: {
             '/project/': [
                 '',
@@ -100,6 +107,6 @@ module.exports = {
             ],
         },
         
-        sidebarDepth : 2
+        
       }
 }
