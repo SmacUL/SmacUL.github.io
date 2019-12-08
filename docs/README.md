@@ -18,19 +18,20 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 <!-- # Log -->
 # 语言
 - [Java](./lang/java)
-- [JS](./lang/js)
+- [JS](./lang/js) 包含 JS 与 ES6 的内容
+- [Python](./lang/python)
 
 # Web 基础
 - [CSS](./web/css)
 
 # 工具
 - [Mysql](./tool/mysql)
-- [Webpack](./tool/webpack/文档阅读)
-- [Git](./tool/git/Git)
+- [Webpack](./tool/webpack/文档阅读) 
+- [Git](./tool/git/Git) 
 - [Maven](./tool/maven/Maven)
 - [Spring](./tool/spring)
-- [MyBatis](./tool/mybatis/MyBatis)
-- [Hibernate](./tool/hibernate/Hibernate)
-- [Vuepress](./tool/vuepress)
+- [MyBatis](./tool/mybatis/MyBatis) 持久化框架
+- [Hibernate](./tool/hibernate/Hibernate) 持久化框架
+- [Vuepress](./tool/vuepress)  创建自己的个人主页
 
 # Log
