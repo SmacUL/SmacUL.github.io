@@ -5,26 +5,20 @@
 ## XMLHttpRequest 对象 (XHR)
 
 各个浏览器都支持原生的 XHR 对象; 
-
+``` JS
 var xhr = new XMLHttpRequest(); 
-
+```
  
 
 ### XHR 的基本用法
 
-- xhr.open(请求类型, 请求的 URL ,     是否异步); 
+- `xhr.open(请求类型, 请求的 URL ,     是否异步)`;  
+    URL 相遇对执行代码的当前路径;  
+    open 方法只是准备, 并不会发送请求;   
+    是否异步的参数: true 为异步, false 为同步
 
-URL 相遇对执行代码的当前路径;
-
-open 方法只是准备, 并不会发送请求; 
-
-是否异步的参数: true 为异步, false 为同步
-
- 
-
-- xhr.send(作为请求主体发送的数据); 
-
-send 方法发送请求; 
+- `xhr.send(作为请求主体发送的数据)`;   
+    send 方法发送请求; 
 
  
 
@@ -53,11 +47,11 @@ send 方法发送请求;
 
 1. 检查 status 属性, HTTP 的代码; 
 
-xhr.staus >= 200 && xhr.status < 300 || xhr.status = 304
+`xhr.staus >= 200 && xhr.status < 300 || xhr.status = 304`
 
-1. 访问 XHR 的 responseText 或 responseXML
+1. 访问 XHR 的 `responseText` 或 `responseXML`
 
-xhr.responseText / xhr.reponseXML 
+`xhr.responseText / xhr.reponseXML`
 
  
 
@@ -65,60 +59,40 @@ xhr.responseText / xhr.reponseXML
 
 XHR 的 readyState 属性标明了 请求-响应 过程的各个活动阶段;
 
-- 0 未初始化
-
-没有调用 open 方法
-
-- 1 启动
-
-调用了 open 方法, 没有调用 send 方法
-
-- 2 发送
-
-调用了open 和 send 方法
-
-- 3 接收
-
-响应数据接收过程
-
-- 4 完成
-
-响应数据接收完毕, 可以在客户端使用
+- 0 未初始化  
+    没有调用 open 方法
+- 1 启动  
+    调用了 open 方法, 没有调用 send 方法
+- 2 发送  
+    调用了open 和 send 方法
+- 3 接收  
+    响应数据接收过程
+- 4 完成  
+    响应数据接收完毕, 可以在客户端使用
 
  
 
-只要 readyState 属性的值变化时, 就会触发 readystatechange 事件; 
+只要 `readyState` 属性的值变化时, 就会触发 `readystatechange` 事件; 
 
-在调用 open 方法之前, 需要设置 readystatechange 的监听器;
+在调用 `open()` 方法之前, 需要设置 `readystatechange` 的监听器;
 
-在访问响应数据前, 检查 readyState 的属性是否为 4 ;
+在访问响应数据前, 检查 `readyState` 的属性是否为 4 ;
 
  
-
+``` JS
 var xhr = createXHR(); 
-
 xhr.onreadystatechange = function(){ 
-
-if (xhr.readyState == 4){
-
-if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){ 
-
-alert(xhr.responseText);
-
-} else { 
-
-alert("Request was unsuccessful: " + xhr.status); 
-
-}
-
-} 
-
+    if (xhr.readyState == 4){
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){ 
+            alert(xhr.responseText);
+        } else { 
+            alert("Request was unsuccessful: " + xhr.status); 
+        }
+    } 
 };
-
 xhr.open("get", "example.txt", true); 
-
 xhr.send(null);
-
+```
  
 
  
@@ -142,14 +116,10 @@ post 请求会将数据作为请求的主体提交, 这是与 get 请求的一�
 ### FormData 传输数据格式规范
 
 FormData 用于序列化表单以及创建与表单格式相同的数据; 
-
- 
-
+``` JS
 var form = document.getElementById("user-info"); 
-
 xhr.send(new FormData(form)); 
-
-###  
+```
 
 ### timeout 超时设定 (仅仅 IE)
 
@@ -157,13 +127,12 @@ timeout 单位是毫秒;
 
 xhr 可以在超时之后触发 timeout 事件, 
 
+``` JS
 xhr.time = 1000;
-
 xhr.ontimeout = function() {
-
-alert("timeout");
-
+    alert("timeout");
 };
+```
 
  
 
@@ -236,7 +205,8 @@ XDR 的使用方法和 XHR 类似, 需要先使用 open 方法, 然后使用 sen
 - XDR 返回的数据只有原始本文, 没有状态代码;
 - 只要访问有效, 就会触发 load 事件;
 - 如果失败, 就会触发 error 事件,     没有报错信息;
-- load 和 error     事件的处理程序都要自己写, load 是必须的, error 可以不用; 
+- load 和 error       
+    事件的处理程序都要自己写, load 是必须的, error 可以不用; 
 
  
 
@@ -254,9 +224,9 @@ XDR 的使用方法和 XHR 类似, 需要先使用 open 方法, 然后使用 sen
 
 跨域 XHR 对象的限制: 
 
-- 不能使用 setRequestHeader()     设定自定义头部
+- 不能使用 `setRequestHeader()`     设定自定义头部
 - 不能发送和接受 cookie
-- 调用     getAllResponseHeaders() 方法总会返回空字符串; 
+- 调用     `getAllResponseHeaders()` 方法总会返回空字符串; 
 
  
 
@@ -305,21 +275,15 @@ script 标签不受域的限制, 可以随意访问;
 服务器收到之后, 会将 response 加载到客户端的回调函数中;
 
  
-
+``` JS
 function handleResponse(response){
-
-alert("You’re at IP address " + response.ip + ", which is in " + 
-
-response.city + ", " + response.region_name); 
-
+    alert("You’re at IP address " + response.ip + ", which is in " + 
+    response.city + ", " + response.region_name); 
 }
-
- 
-
 var script = document.createElement("script");
-
-script.src = "http://freegeoip.net/json/?callback=handleResponse"; document.body.insertBefore(script, document.body.firstChild); 
-
+script.src = "http://freegeoip.net/json/?callback=handleResponse"; 
+document.body.insertBefore(script, document.body.firstChild); 
+```
  
 
  
@@ -360,7 +324,30 @@ XHR readstatechange 事件 readyState 是否为 3 (客户端开始接受数据)
 
 readyState 为 4 时, 打包所有数据; 
 
-[代码 一]
+``` JS
+function createStreamingClient(url, progress, finished){ 
+	var xhr = new XMLHttpRequest(), received = 0; 
+	xhr.open("get", url, true); 
+	xhr.onreadystatechange = function(){ 
+		var result;
+		if (xhr.readyState == 3){ 
+			//只取得最新数据并调整计数器
+			result = xhr.responseText.substring(received);
+			received += result.length; 
+			//调用 progress 回调函数
+			progress(result); 
+		} else if (xhr.readyState == 4){ 
+			finished(xhr.responseText); 
+		} 
+	}; 
+	xhr.send(null); return xhr; 
+} 
+
+var client = createStreamingClient("streaming.php", 
+			function(data){ alert("Received: " + data); }, 
+			function(data){ alert("Done!"); }
+); 
+```
 
  
 
