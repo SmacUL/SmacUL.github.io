@@ -81,8 +81,9 @@ module.exports = {
                 ['Maven', 'Maven']
             ],
             '/tool/git/': [
-                // '',
-                ['Git', 'Git']
+                '',
+                ['Git', 'Git'],
+                ['Github', 'Github']
             ],
 
             '/tool/hibernate/': [

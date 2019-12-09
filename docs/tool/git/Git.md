@@ -1,7 +1,5 @@
 # git
 
-[git 文档 git document](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5)
-
 ## 设置自己的用户名和邮箱
 
 ``` shell
