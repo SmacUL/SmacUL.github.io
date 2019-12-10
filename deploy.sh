@@ -17,7 +17,7 @@ git add *
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io
-git push -f git@github.com:SmacUL/SmacUL.github.io.git page
+git push -f git@github.com:SmacUL/SmacUL.github.io.git master
 
 cd ../../../
 git add *
