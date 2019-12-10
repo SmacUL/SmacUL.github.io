@@ -22,7 +22,7 @@ git push -f git@github.com:SmacUL/SmacUL.github.io.git master
 cd ../../../
 git add *
 git commit -m 'code'
-git push -f git@github.com:SmacUL/SmacUL.github.io.git code
+git push -f origin code
 
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
