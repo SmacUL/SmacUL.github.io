@@ -1,6 +1,6 @@
 module.exports = {
     title: "SmacUL's Blog",
-    description: 'こんにちは',
+    description: '你好',
     head: [
         ['link', { rel: 'icon', href: '/assets/img/Logo.png' }]
     ],
@@ -11,7 +11,7 @@ module.exports = {
         // logo: '/assets/img/Logo.png',
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Project', link: '/project/', target:'_blank'},
+            // { text: 'Project', link: '/project/', target:'_blank'},
             { text: 'About Me', link: '/self/', target:'_blank'},
             // { text: 'External', link: 'https://baidu.com' },
         ],
@@ -38,14 +38,15 @@ module.exports = {
             '/lang/js/': [
                 '',
                 // ['基本概念', '基本概念'],
-                ['基本类型', '数据类型'],
-                ['变量 作用域 垃圾回收', '变量 作用域 垃圾回收'],
+                ['数据类型', '数据类型'],
+                ['变量 作用域 垃圾回收', '作用域与闭包'],
+                ['垃圾回收', '垃圾回收'],
                 // ['函数表达式', '函数表达式'],
                 // ['JS 对象', 'JS 对象'],
                 // ['基本引用类型', '基本引用类型'],
                 // ['BOM 对象', 'BOM 对象'],
                 // ['用户检测代理', '用户检测代理'],
-                ['事件流 事件处理程序 事件对象', '事件流 事件处理程序 事件对象'],
+                ['事件流 事件处理程序 事件对象', '事件'],
                 ['Ajax 与 Conet', 'Ajax 与 Conet'],
                 // ['JS 对象总结', 'JS 对象总结'],
                 ['常用场景', '常用场景']

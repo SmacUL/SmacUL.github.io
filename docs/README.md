@@ -28,7 +28,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 ## 工具
 - [Mysql](./tool/mysql)
-- [Webpack](./tool/webpack/文档阅读) 
+<!-- - [Webpack](./tool/webpack/文档阅读)  -->
 - [Git](./tool/git/Git) 
 - [Maven](./tool/maven/Maven)
 - [Spring](./tool/spring)
