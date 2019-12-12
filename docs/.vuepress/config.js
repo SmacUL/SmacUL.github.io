@@ -27,6 +27,23 @@ module.exports = {
                 // 'TestB',
                 // ['TestC', 'TesdddtC']
             ],
+            '/basic/datastructure/': [
+                '',
+                // ['']
+            ],
+            '/basic/network/': [
+                '',
+            ],
+            '/basic/math/': [
+                '',
+                ['极限与连续', '极限与连续'],
+            ],
+            '/basic/linearalgebra/': [
+                '',
+            ],
+            '/basic/probability/': [
+                '',
+            ],
             '/web/css/': [
                 '',
                 ['Layout', '布局'],
