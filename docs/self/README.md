@@ -14,7 +14,7 @@ features:
   details: 浙江科技学院 软件工程 本科
 - title: 联系方式
   details: zhongfengs@foxmail.com
-footer: MIT Licensed | Copyright © 2018-present Evan You
+footer: MIT Licensed | Copyright © 2019-present SmacUL
 ---
 
 <!-- # 关于我 -->

@@ -5,17 +5,8 @@ heroText: 你 好
 tagline: 笔记  日志
 actionText: 关于我 →
 actionLink: /self/
-# features:
-# - title: 编写目的
-#   details: 总结知识, 方便查阅, 形成体系
-# - title: 编写原则
-#   details: 注重逻辑, 总结升华, 
-#   笔记不是抄书, 注重逻辑, 不要为写笔记而写笔记
-# - title: 高性能
-#   details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+footer: MIT Licensed | Copyright © 2019-present SmacUL
 ---
-<!-- ceshi -->
 <!-- # Log -->
 <!-- ## 万恶之源
 - [高等数学](/basic/math)
@@ -27,7 +18,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ## 语言
 - [Java](./lang/java)
 - [JavaScript](./lang/js)   
-    包含 JS 与 ES6 的内容
+    包含现行 JS 的版本内容与 ES6 的内容
 - [Python](./lang/python)
 
 ## Web 基础
@@ -36,12 +27,11 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ## 工具
 - [Mysql](./tool/mysql)
 <!-- - [Webpack](./tool/webpack/文档阅读)  -->
-- [Git](./tool/git/Git) 
+- [Git](./tool/git/Git)   
+    包含 Git 与 Github 
 - [Maven](./tool/maven/Maven)
 - [Spring](./tool/spring)
 - [MyBatis](./tool/mybatis/MyBatis)
 - [Hibernate](./tool/hibernate/Hibernate)
 - [Vuepress](./tool/vuepress)  
     创建自己的个人主页
-
-<!-- # Log -->
