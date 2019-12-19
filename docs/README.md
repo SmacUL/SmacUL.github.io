@@ -7,7 +7,7 @@ actionText: 关于我 →
 actionLink: /self/
 footer: MIT Licensed | Copyright © 2019-present SmacUL
 ---
-<!-- # Log -->
+
 <!-- ## 万恶之源
 - [高等数学](/basic/math)
 - [线性代数](/basic/linearalgebra/)
@@ -36,3 +36,7 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 - [Hibernate](./tool/hibernate/Hibernate)
 - [Vuepress](./tool/vuepress)  
     创建自己的个人主页. 
+
+## Log
+- [新闻数据爬取](./log/新闻数据爬虫)  
+    利用 Python 及爬虫工具获取今日头条的新闻数据
