@@ -8,12 +8,11 @@ module.exports = {
         lineNumbers: true
     },
     themeConfig: {
-        // logo: '/assets/img/Logo.png',
         nav: [
             { text: 'Home', link: '/' },
-            // { text: 'Project', link: '/project/', target:'_blank'},
-            { text: 'About Me', link: '/self/', target:'_blank'},
-            // { text: 'External', link: 'https://baidu.com' },
+            // { text: 'Project', link: '/project/'},
+            { text: 'About Me', link: '/self/'},
+            { text: 'GitHub', link: 'https://github.com/SmacUL' },
         ],
 
         sidebarDepth : 3,
@@ -23,30 +22,17 @@ module.exports = {
             '/project/': [
                 '',
                 // ['Python 爬虫--框架', 'Python 爬虫--框架']
-                ['TestA', '新闻推荐系统'],
-                // 'TestB',
-                // ['TestC', 'TesdddtC']
             ],
             '/log/': [
                 ['新闻数据爬虫', '新闻数据爬虫']
             ],
-            // '/basic/datastructure/': [
-            //     '',
-            //     // ['']
-            // ],
-            // '/basic/network/': [
-            //     '',
-            // ],
-            // '/basic/math/': [
-            //     '',
-            //     ['极限与连续', '极限与连续'],
-            // ],
-            // '/basic/linearalgebra/': [
-            //     '',
-            // ],
-            // '/basic/probability/': [
-            //     '',
-            // ],
+            '/basic/datastructure/': [
+                '',
+                // ['']
+            ],
+            '/basic/network/': [
+                '',
+            ],
             '/web/css/': [
                 '',
                 ['Layout', '布局'],
@@ -57,35 +43,18 @@ module.exports = {
             ],
             '/lang/js/': [
                 '',
-                // ['基本概念', '基本概念'],
                 ['数据类型', '数据类型'],
                 ['变量 作用域 垃圾回收', '作用域'],
                 ['垃圾回收', '垃圾回收'],
                 ['闭包', '闭包'],
-                
-                // ['函数表达式', '函数表达式'],
-                // ['JS 对象', 'JS 对象'],
-                // ['基本引用类型', '基本引用类型'],
-                // ['BOM 对象', 'BOM 对象'],
-                // ['用户检测代理', '用户检测代理'],
                 ['事件流 事件处理程序 事件对象', '事件'],
                 ['Ajax 与 Conet', 'Ajax 与 Conet'],
-                // ['JS 对象总结', 'JS 对象总结'],
                 ['常用场景', '常用场景']
             ],
             '/lang/java/': [
                 '',
-                // ['Java 应该是什么样的', 'Java 应该是什么样的'],
-                // ['第一个 Java 程序', '第一个 Java 程序'],
                 ['数据类型', '数据类型'],
                 ['反射', '反射'],
-                // ['Java 的初始化与清理', 'Java 的初始化与清理'],
-                // ['访问权限', '访问权限'],
-                // ['复用类的手段', '复用类的手段'],
-                // ['多态', '多态'],
-                // ['抽象类和方法', '抽象类和方法'],
-                // ['内部类', '内部类'],
-                
             ],
             '/lang/python/': [
                 ''

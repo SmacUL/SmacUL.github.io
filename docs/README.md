@@ -9,9 +9,6 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 ---
 
 <!-- ## 万恶之源
-- [高等数学](/basic/math)
-- [线性代数](/basic/linearalgebra/)
-- [概率论](/basic/probability/)
 - [数据结构](/basic/datastructure/)
 - [计算机网络](/basic/network/) -->
 
