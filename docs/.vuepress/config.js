@@ -53,8 +53,9 @@ module.exports = {
             ],
             '/lang/java/': [
                 '',
-                ['数据类型', '数据类型'],
-                ['反射', '反射'],
+                ['数据类型', '数据管理'],
+                ['集合', '集合'], 
+                ['反射', '反射'], 
             ],
             '/lang/python/': [
                 ''
@@ -66,7 +67,7 @@ module.exports = {
             '/tool/mysql/': [
                 '',
                 ['SQL 关系操作', 'SQL 关系操作'],
-                ['Mysql 数据类型', 'Mysql 数据类型'],
+                ['Mysql 数据类型', 'MySQL 数据类型'],
             ],
             '/tool/maven/': [
                 // '',
@@ -74,7 +75,7 @@ module.exports = {
             ],
             '/tool/git/': [
                 '',
-                ['Git', 'Git'],
+                ['Git', 'Git 的基本使用'],
                 ['Github', 'Github']
             ],
 

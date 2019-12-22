@@ -6,7 +6,7 @@
 
 ## 修改 Hello SpringMVC 的项目结构
 
-这里的项目结构不唯一，也可以采用其他合理的目录结构，但是这是一个相对完整的项目结构。
+这里的项目结构不唯一, 也可以采用其他合理的目录结构, 但是这是一个相对完整的项目结构. 
 
         HelloSpringMVC
         - src
@@ -17,7 +17,7 @@
                         - controllers （控制器）
                             - HelloMVCController.java
                         - dao （数据库操作对象）
-                        - services （服务，一般由控制器调用）
+                        - services （服务, 一般由控制器调用）
                         - util （工具类）
                 - resources
                 - test
@@ -38,7 +38,7 @@
 
 ## 修改各级 xml 配置文件中内容
 
-修改完成后注意配置静态资源，并进行测试。
+修改完成后注意配置静态资源, 并进行测试. 
 
 1. pom.xml
 
@@ -96,7 +96,7 @@
     ``` xml
         <display-name>Archetype Created Web Application</display-name>
 
-        <!-- 监听器，在 web 容器启动时自动加载 applicationContext 的配置信息 -->
+        <!-- 监听器, 在 web 容器启动时自动加载 applicationContext 的配置信息 -->
         <listener>
             <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
         </listener>
@@ -156,7 +156,7 @@
 
 ## ResponseBody
 
-SpringMVC 提供了这样的一个机制，允许控制器返回的数据不经过正常的视图处理流程，而是直接将返回的数据写入响应体中（response body）。由于 HTTP 协议支持的各种数据类型与程序运行中产生的各种数据类型是不一样的，因此需要有一个机制将处理器返回的数据转换成某种类型的HTTP 协议支持的数据类型。
+SpringMVC 提供了这样的一个机制, 允许控制器返回的数据不经过正常的视图处理流程, 而是直接将返回的数据写入响应体中（response body）. 由于 HTTP 协议支持的各种数据类型与程序运行中产生的各种数据类型是不一样的, 因此需要有一个机制将处理器返回的数据转换成某种类型的HTTP 协议支持的数据类型. 
 
 [具体介绍](https://www.cnblogs.com/weilu2/p/springmvc_controller_handler_return_json_xml.html)
 
@@ -166,7 +166,7 @@ SpringMVC 提供了这样的一个机制，允许控制器返回的数据不经�
         - jackson-core
         - jackson-databind
 
-    这两个 jar 包使得 Controller 能够返回 JSON 数据，在 SpringMVC 中 JSON 的数据转换器需要以上两个依赖。这个转换器可以将对象转为 JSON 格式的数据返回给前端。
+    这两个 jar 包使得 Controller 能够返回 JSON 数据, 在 SpringMVC 中 JSON 的数据转换器需要以上两个依赖. 这个转换器可以将对象转为 JSON 格式的数据返回给前端. 
 
 2. 前端发送请求
 
@@ -198,17 +198,17 @@ SpringMVC 提供了这样的一个机制，允许控制器返回的数据不经�
     }
     ```
 
-如果没有问题， home.html 页面将弹出 success ，控制台也将输出相应信息。
+如果没有问题,  home.html 页面将弹出 success , 控制台也将输出相应信息. 
 
 ## ResponseBody
 
 1. 创建 Bean
 
-    User Bean ， 3 个属性： id name pass ，相应的 getter 、 setter 方法，无属性和 3 个属性 constructor 的各一个。
+    User Bean ,  3 个属性： id name pass , 相应的 getter 、 setter 方法, 无属性和 3 个属性 constructor 的各一个. 
 
-    - 为什么要一个无参构造函数，这是因为 jackson 的反序列化需要无参构造函数，但是在 User 中我们定义了一个带三个参数的构造器，导致 JVM 不会添加无参构造器，如果没有这个无参构造器，控制器返回数据时就会报错。
+    - 为什么要一个无参构造函数, 这是因为 jackson 的反序列化需要无参构造函数, 但是在 User 中我们定义了一个带三个参数的构造器, 导致 JVM 不会添加无参构造器, 如果没有这个无参构造器, 控制器返回数据时就会报错. 
 
-    - 此外如果前端的数据名称和 Bean 中对应不上，在 Bean 中各个成员属性上可以使用 @JsonProperty 标签
+    - 此外如果前端的数据名称和 Bean 中对应不上, 在 Bean 中各个成员属性上可以使用 @JsonProperty 标签
 
 1. 前端貌似必须使用 ajax
 
@@ -234,7 +234,7 @@ SpringMVC 提供了这样的一个机制，允许控制器返回的数据不经�
     ```
     - dataType 发出的数据类型
     - contentType 返回的数据类型
-    - 控制器将返回数据， result 可以就是一个 JSON 对象。
+    - 控制器将返回数据,  result 可以就是一个 JSON 对象. 
 
 2. Controller 
    

@@ -41,8 +41,8 @@ div + span {}
 一个通用的顺序:   
 :link > :visited > :focus > :hover > :active
 
-a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。  
-a:active 必须被置于 a:hover 之后，才是有效的。
+a:hover 必须被置于 a:link 和 a:visited 之后, 才是有效的.   
+a:active 必须被置于 a:hover 之后, 才是有效的. 
 :::
 
 ## :nth-child VS :nth-of-type
@@ -60,7 +60,7 @@ a:active 必须被置于 a:hover 之后，才是有效的。
 :::
 
 ### [:nth-child 选择器](https://www.w3school.com.cn/cssref/selector_nth-child.asp)
-> :nth-child(n) 选择器匹配属于其父元素的第 N 个子元素，不论元素的类型。    
+> :nth-child(n) 选择器匹配属于其父元素的第 N 个子元素, 不论元素的类型.     
 
 这个选择器很容易理解成一个错误形式: 
 ``` html
@@ -128,7 +128,7 @@ a:active 必须被置于 a:hover 之后，才是有效的。
 
 ## [CSS 伪元素](https://www.w3school.com.cn/css/css_pseudo_elements.asp)
 
-伪元素是一个假的元素，但是它们对用户是可见的，只能通过css来操作，
+伪元素是一个假的元素, 但是它们对用户是可见的, 只能通过css来操作, 
 ::: tip
 伪元素不会出现在DOM中
 :::
@@ -150,7 +150,7 @@ a:active 必须被置于 a:hover 之后，才是有效的。
 这里的 :after 实际上在需要清除浮动的父元素内部添加了一些内容, 而不是在父元素的同级后方添加内容; 
 :::
 
-在伪元素中如果没有 `content` 属性，伪元素是无效的，所以会有 `content` ;   
+在伪元素中如果没有 `content` 属性, 伪元素是无效的, 所以会有 `content` ;   
 默认情况下插入的伪元素是内联元素, 所以需要将其设置为 块级元素 才可以起到像 `<div sytle="clear:both"></div>` 的效果; 
 
 

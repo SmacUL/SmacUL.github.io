@@ -3,16 +3,16 @@
 - Spring MVC 的基本概念
 - 创建一个 Hello SpringMVC 项目
 
-此部分会bb一下Spring MVC的一些基本概念，并且详细说明SpringMVC的Hello World项目的构建。
+此部分会bb一下Spring MVC的一些基本概念, 并且详细说明SpringMVC的Hello World项目的构建. 
 
-Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建干净轻薄的web层。SMVC的基于请求驱动指的就是使用请求-响应模型，提供强大的约定大于配置的契约式编程支持。
+Spring MVC 是一种轻量级的Web框架, 将web层进行解耦, 用于创建干净轻薄的web层. SMVC的基于请求驱动指的就是使用请求-响应模型, 提供强大的约定大于配置的契约式编程支持. 
 
 1. 支持REST风格的URL
-2. 添加更多注解，可完全注解驱动
+2. 添加更多注解, 可完全注解驱动
 3. 引入HTTP输入输出转换器（HttpMessageConverter）支持json
 4. 和数据转换、格式化、验证框架无缝集成
 5. 对静态资源处理提供特殊支持
-6. 更加灵活的控制器方法签名，可完全独立于Servlet API
+6. 更加灵活的控制器方法签名, 可完全独立于Servlet API
 
 ## Spring MVC框架处理流程
 
@@ -28,16 +28,16 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
 
 1. DispatcherServlet
 
-    在获得用户的请求后，调度相应的Controller处理业务逻辑并使用ViewResolve为用户渲染画面。
+    在获得用户的请求后, 调度相应的Controller处理业务逻辑并使用ViewResolve为用户渲染画面. 
 2. HandlerAdapter
 
-    Handler是在 DispatcherServlet 中的内置对象，它会作为Controller的代表，并包装成适配器的形式提供给 DispatcherServlet 使用，DispatcherServlet也是通过这种方式才能真正调度相应的Controller。
+    Handler是在 DispatcherServlet 中的内置对象, 它会作为Controller的代表, 并包装成适配器的形式提供给 DispatcherServlet 使用, DispatcherServlet也是通过这种方式才能真正调度相应的Controller. 
 3. HandlerInterceptor
    
-   这是一个拦截器的接口，它会在被拦截对象的前后添加一些处理逻辑。
+   这是一个拦截器的接口, 它会在被拦截对象的前后添加一些处理逻辑. 
 4. HandlerMapping
    
-   HandlerMapping 会记录 DispatcherServlet 与 Controller 之间的映射关系，帮助 DispatcherServlet 来获得正确的适配器。
+   HandlerMapping 会记录 DispatcherServlet 与 Controller 之间的映射关系, 帮助 DispatcherServlet 来获得正确的适配器. 
 5. HandlerExecutionChain
 
     这是一整个方法链：
@@ -45,16 +45,16 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
         preHandler -> Controller method -> postHandler -> afterCompletion
 7. ModelAndView
    
-    ModelAndView包含着数据模型和相应视图的逻辑名称。
+    ModelAndView包含着数据模型和相应视图的逻辑名称. 
 8. ViewResolve
 
-    用于从ModelAndView中获得对应的视图名称（.jsp等）返回给 DispatcherServlet 。
+    用于从ModelAndView中获得对应的视图名称（.jsp等）返回给 DispatcherServlet . 
 
 ## 开发流程
 
-1. 新建maven项目，补全项目结构
+1. 新建maven项目, 补全项目结构
 1. 添加SpringMVC包依赖及jetty配置
-1. 修改web.xml，添加springmvc控制器配置
+1. 修改web.xml, 添加springmvc控制器配置
 1. 在WEB-INF下添加SpringMVC的配置文件（包扫描及resolver配置）规划用户请求
 1. 开发controller
 1. 开发视图（jsp）
@@ -92,7 +92,7 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
 
 4. 修改pom.xml
    
-   - 添加Spring mvc、servlet的相关依赖，
+   - 添加Spring mvc、servlet的相关依赖, 
   
         注意一下：Spring V4.1以后的版本在不支持Servlet3.0的应用服务器上跑时会报如下错误：
     
@@ -114,7 +114,7 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
 
    - 添加jetty插件
 
-        jetty是一个开源的servlet容器，是一个基于标准、全功能的Java服务器。我们需要一个Servlet容器来提供Servlet功能，jetty可以使已经实现了的web应用程序提供Servlet功能。
+        jetty是一个开源的servlet容器, 是一个基于标准、全功能的Java服务器. 我们需要一个Servlet容器来提供Servlet功能, jetty可以使已经实现了的web应用程序提供Servlet功能. 
 
         ```xml
         <plugin>
@@ -160,7 +160,7 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
 
 5. 修改 web.xml
 
-    首先要注意的一点是默认生成的xml是2.3版本的，这个版本默认是不支持EL表达式的，所以需要把它改成2.4以上的版本。
+    首先要注意的一点是默认生成的xml是2.3版本的, 这个版本默认是不支持EL表达式的, 所以需要把它改成2.4以上的版本. 
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -172,7 +172,7 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
     </web-app>
     ```
 
-    在修改xml之后需要配置dispatcher servlet与对应的servlet-maping。
+    在修改xml之后需要配置dispatcher servlet与对应的servlet-maping. 
 
     ```xml
     <!-- Spring MVC的核心 -->
@@ -192,9 +192,9 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
     ```
     这个地方需要说明的是：
 
-    - 如果没有注释的那一段，Spring默认会在 WEB-INF 下方寻找一个名为[servlet-name]-servlet.xml，在上面的情况下就是会寻找 dispatcher-servlet.xml 文件。如果有注释的那一段，就直接修改param-value标签下的内容指定DS的路径以及名称。
-    -  servlet-mapping 内的 servlet-name 对应上面 servlet 中的 servlet-name。
-    -  url-pattern 标签针对的是url内主机名后面的内容。
+    - 如果没有注释的那一段, Spring默认会在 WEB-INF 下方寻找一个名为[servlet-name]-servlet.xml, 在上面的情况下就是会寻找 dispatcher-servlet.xml 文件. 如果有注释的那一段, 就直接修改param-value标签下的内容指定DS的路径以及名称. 
+    -  servlet-mapping 内的 servlet-name 对应上面 servlet 中的 servlet-name. 
+    -  url-pattern 标签针对的是url内主机名后面的内容. 
 
 6. 创建dispatcher servlet的xml配置文件
    
@@ -206,7 +206,7 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
         
     - 添加 viewResolver
     
-        这里添加的是一个jsp视图解析器，暂时只能返回jsp页面。
+        这里添加的是一个jsp视图解析器, 暂时只能返回jsp页面. 
 
         ```xml        
         <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -219,7 +219,7 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
         - prefix 指的是访问URL的前缀
         - suffix 指的是访问URL的后缀
         
-        两者的意思就是能够访问/WEB-INF/jsp/路径下所有的jsp文件，使其作为视图返回给DS。
+        两者的意思就是能够访问/WEB-INF/jsp/路径下所有的jsp文件, 使其作为视图返回给DS. 
 
 7. 创建一个简单的 Controller -- HelloMVCController
     
@@ -236,11 +236,11 @@ Spring MVC 是一种轻量级的Web框架，将web层进行解耦，用于创建
         } 
     }
     ```
-    - @Controller 注解可以将这个类变成一个Handler，也就是一个控制器（粗暴点）。
+    - @Controller 注解可以将这个类变成一个Handler, 也就是一个控制器（粗暴点）. 
     - @RequestMapping 注解（类前）中的属性将匹配URL中的对应的内容
     - @RequestMapping 注解（方法前）中的属性将进一步匹配URL中对应的内容
 
-    剩下的事情就是再创建一个视图，home.jsp，创建完毕之后启动jetty的服务，打开浏览器使用URL：host:8080/hello/mvc 访问home.jsp
+    剩下的事情就是再创建一个视图, home.jsp, 创建完毕之后启动jetty的服务, 打开浏览器使用URL：host:8080/hello/mvc 访问home.jsp
     
 8. 创建视图--home.jsp
    

@@ -22,15 +22,15 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 - [CSS](./web/css)
 
 ## 工具
-- [Mysql](./tool/mysql)  
+- [MySQL](./tool/mysql)  
     包含 SQL 的相关内容. 
 <!-- - [Webpack](./tool/webpack/文档阅读)  -->
 - [Git](./tool/git/Git)   
-    包含 Git 与 Github.  
+    包含 Git 与 GitHub.  
 - [Maven](./tool/maven/Maven)
 - [Spring](./tool/spring)
 - [MyBatis](./tool/mybatis/MyBatis)
-- [Hibernate](./tool/hibernate/Hibernate)
+<!-- - [Hibernate](./tool/hibernate/Hibernate) -->
 - [Vuepress](./tool/vuepress)  
     创建自己的个人主页. 
 
