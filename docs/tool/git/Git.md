@@ -29,6 +29,15 @@ Permission denied (publickey).
 fatal: Could not read from remote repository.
 ```
 
+这种时候, 我们需要创建一对公钥和私钥, 将公钥交给远程仓库, 私钥保留在本地. 
+
+``` bash
+ssh-keygen
+```
+这个操作会生成一个公钥 `id_rsa.pub` 和一个私钥 `id_rsa` , 生成公钥和私钥的时候, 留意一下输出路径;  
+如果远程仓库在 GitHub 中, 在 Github 官网的 `settings-SSH and GPG keys` 中 new 一个 SSH key , 在弹出的对话框中, 将公钥内的内容粘贴进去; 
+
+
 ## 提交
 
 ### 合并上一次提交
@@ -75,6 +84,25 @@ git remote rm [原有仓库代号]
 git remote add [远程仓库代号] [远程仓库地址]
 git push -u [远程仓库代号, 一般是origin] [分支名称, 一般是master]
 ```
+
+## .gitignore 忽略文件
+可以在 .gitignore 中指定不需要追踪的文件或者文件类型或者文件夹目录. 
+
+::: tip
+如果文件已经被 commit 到仓库中, 然后再讲文件添加到 .gitignore 中是无效的. 
+:::
+
+### 更新 .gitignore 文件
+
+如果文件已经被 commit 到仓库中, 但是又想取消此文件的追踪. 可以先修改 .gitignore 添加此文件, 然后按照以下指令操作.
+
+``` bash
+# 先修改 .gitignore
+git rm -r --cache .     # 删除所有文件的追踪
+git add .               # 再次添加所有文件, .gitignore 文件将生效
+git commit -m "[注释]"   # commit
+```
+
 
 ## 打标签
 

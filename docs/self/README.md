@@ -2,7 +2,7 @@
 home: true
 heroImage: '/assets/img/Logo.png'
 heroText: 我
-description: 一个极不专业的万金油工具人
+description: 一个不专业的万金油工具人
 # tagline: 
 # actionText: PROJECT →
 # actionLink: /project/
