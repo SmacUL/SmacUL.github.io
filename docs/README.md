@@ -31,6 +31,7 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 - [Spring](./tool/spring)
 - [MyBatis](./tool/mybatis/MyBatis)
 <!-- - [Hibernate](./tool/hibernate/Hibernate) -->
+- [Vue CLI](./tool/vuecli)
 - [Vuepress](./tool/vuepress)  
     创建自己的个人主页. 
 
