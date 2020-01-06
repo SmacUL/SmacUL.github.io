@@ -32,9 +32,9 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 - [MyBatis](./tool/mybatis/MyBatis)
 <!-- - [Hibernate](./tool/hibernate/Hibernate) -->
 - [Vue CLI](./tool/vuecli)
-- [Vuepress](./tool/vuepress)  
+- [VuePress](./tool/vuepress)  
     创建自己的个人主页. 
 
 ## Log
-- [新闻数据爬取](./log/新闻数据爬虫)  
+- [新闻数据爬取](./log/news_crawler)  
     利用 Python 及爬虫工具获取今日头条的新闻数据

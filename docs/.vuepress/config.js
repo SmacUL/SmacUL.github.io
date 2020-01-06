@@ -23,8 +23,10 @@ module.exports = {
                 '',
                 // ['Python 爬虫--框架', 'Python 爬虫--框架']
             ],
-            '/log/': [
-                ['新闻数据爬虫', '新闻数据爬虫']
+            '/log/news_crawler/': [
+                '',
+                ['新闻数据爬虫', '一开始的样子'],
+                ['新闻数据爬虫-修改', '2020-01-05 修改'],
             ],
             '/basic/datastructure/': [
                 '',
@@ -101,10 +103,10 @@ module.exports = {
             ],
             '/tool/vuepress/': [
                 '',
-                ['快速开始', '感受 Vuepress'],
+                ['快速开始', '感受 VuePress'],
                 ['部署到 Github Page', '部署到 Github Page'],
                 ['简单装修', '简单装修'],
-                ['Vuepress 的伴侣', 'Vuepress 的伴侣']
+                ['Vuepress 的伴侣', 'VuePress 的伴侣']
             ],
             '/': [
                 '',
