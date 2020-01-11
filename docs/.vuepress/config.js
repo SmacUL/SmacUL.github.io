@@ -30,12 +30,12 @@ module.exports = {
             ],
             '/basic/datastructure/': [
                 '',
-                // ['']
+                ['排序', '排序']
             ],
             '/basic/network/': [
                 '',
             ],
-            '/web/css/': [
+            '/lang/css/': [
                 '',
                 ['Layout', '布局'],
                 // ['可伸缩式布局', '可伸缩式布局'],
