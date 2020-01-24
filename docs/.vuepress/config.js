@@ -80,6 +80,10 @@ module.exports = {
                 // '',
                 ['Maven', 'Maven']
             ],
+            '/tool/docker/': [
+                '',
+                // []
+            ],
             '/tool/git/': [
                 '',
                 ['Git', 'Git 的基本使用'],
@@ -103,7 +107,7 @@ module.exports = {
             ],
             '/tool/vuepress/': [
                 '',
-                ['快速开始', '感受 VuePress'],
+                // ['快速开始', '感受 VuePress'],
                 ['部署到 Github Page', '部署到 Github Page'],
                 ['简单装修', '简单装修'],
                 ['Vuepress 的伴侣', 'VuePress 的伴侣']
