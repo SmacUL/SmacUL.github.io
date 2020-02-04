@@ -10,7 +10,8 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 
 ## 万恶之源
 [数据结构与算法](/basic/datastructure/)
-<!-- - [计算机网络](/basic/network/) -->
+
+[计算机网络](/basic/network/)
 
 ## 语言与规则
 [Java](./lang/java)
@@ -38,7 +39,7 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 [MyBatis](./tool/mybatis/MyBatis)  
 
 <!-- - [Hibernate](./tool/hibernate/Hibernate) -->
-<!-- [Vue CLI](./tool/vuecli)   -->
+[Vue CLI](./tool/vuecli)  
 
 [VuePress](./tool/vuepress)    
     创建自己的个人主页. 
@@ -46,3 +47,6 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 ## Log
 [新闻数据爬取](./log/news_crawler)    
     利用 Python 及爬虫工具获取今日头条的新闻数据
+
+[Bugku 刷题](./log/bugku)  
+    CTF 赛题总结

@@ -2,7 +2,7 @@
 
 [W3C 中对选择器的描述](https://www.w3school.com.cn/css/css_selector_type.asp)
 
-## 后代 VS 子元素 VS 相邻元素
+## 后代 子元素 相邻元素
 
 这三者长得比较像, 放在一起; 三个人选择的范围依次缩小; 
 
@@ -18,7 +18,7 @@ div span {}
 ``` css
 div > span {}
 ```
-对 `div` 标签下所有的 `第一孩子 span` 标签进行渲染; 
+对 `div` 标签下所有的 `第一级孩子 span` 标签进行渲染; 
 
 ### [相邻元素选择器](https://www.w3school.com.cn/css/css_selector_adjacent_sibling.asp)
 
@@ -27,7 +27,7 @@ div + span {}
 ```
 与 `div` 标签**同级**并且**紧临**的 `span` 标签, 将会被渲染;
 
-## :link VS :visited VS :focus VS :hover VS :active
+## :link :visited :focus :hover :active
 
 除了 `:focus` 之外的四个人都属于[链接伪类选择器](https://www.w3school.com.cn/css/css_pseudo_classes.asp);
 
@@ -45,7 +45,7 @@ a:hover 必须被置于 a:link 和 a:visited 之后, 才是有效的.
 a:active 必须被置于 a:hover 之后, 才是有效的. 
 :::
 
-## :nth-child VS :nth-of-type
+## :nth-child :nth-of-type
 
 两个人都属于**位置结构伪类选择器**的范畴; 
 
