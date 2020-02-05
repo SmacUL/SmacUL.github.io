@@ -14,39 +14,41 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 [计算机网络](/basic/network/)
 
 ## 语言与规则
-[Java](./lang/java)
+[Java](/lang/java)
 
-[JavaScript](./lang/js)   
+[JavaScript](/lang/js)   
 包含现行 JS 的版本内容与 ES6 的内容
 <!-- - [Python](./lang/python) -->
 
-[CSS](./lang/css)
+[CSS](/lang/css)
 
 ## 工具
-[MySQL](./tool/mysql)  
+[MySQL](/tool/mysql)  
     包含 SQL 的相关内容.   
 
 <!-- - [Webpack](./tool/webpack/文档阅读)  -->
-[Git](./tool/git/Git)   
+[Git](/tool/git/Git)   
     包含 Git 与 GitHub.   
 
-[Maven](./tool/maven/Maven)  
+[Maven](/tool/maven/Maven)  
 
-[Docker](./tool/docker)
+[Docker](/tool/docker)
 
-[Spring](./tool/spring)  
+[Spring](/tool/spring)  
 
-[MyBatis](./tool/mybatis/MyBatis)  
+[MyBatis](/tool/mybatis/MyBatis)  
 
 <!-- - [Hibernate](./tool/hibernate/Hibernate) -->
-[Vue CLI](./tool/vuecli)  
+[Vue CLI](/tool/vuecli)  
 
-[VuePress](./tool/vuepress)    
+[VuePress](/tool/vuepress)    
     创建自己的个人主页. 
 
 ## Log
-[新闻数据爬取](./log/news_crawler)    
+[新闻数据爬取](/log/news_crawler)    
     利用 Python 及爬虫工具获取今日头条的新闻数据
 
-[Bugku 刷题](./log/bugku)  
+[Bugku 刷题](/log/bugku)  
     CTF 赛题总结
+
+[Seed Labs](/log/seed_labs)

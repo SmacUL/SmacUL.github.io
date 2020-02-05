@@ -123,6 +123,17 @@ module.exports = {
                 ['Web', 'Web'],
                 ['分析', '分析'],
             ],
+            '/log/seed_labs/': [
+                '',
+                ['Cross-Site Scripting Attack', 'Cross-Site Scripting Attack'],
+                ['SQL Injection Attack Lab', 'SQL Injection Attack Lab'],
+                ['Buffer-Overflow Vulnerability Lab', 'Buffer-Overflow Vulnerability Lab'],
+            ],
+            '/self/log/': [
+                // '2020',
+                ['2020', '2020'],
+                ['2019', '2019'],
+            ],
             '/': [
                 '',
             ],
