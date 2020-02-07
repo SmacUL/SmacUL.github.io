@@ -128,6 +128,7 @@ module.exports = {
                 ['Cross-Site Scripting Attack', 'Cross-Site Scripting Attack'],
                 ['SQL Injection Attack Lab', 'SQL Injection Attack Lab'],
                 ['Buffer-Overflow Vulnerability Lab', 'Buffer-Overflow Vulnerability Lab'],
+                ['Return-to-libc Attack Lab', 'Return-to-libc Attack Lab'],
             ],
             '/self/log/': [
                 // '2020',

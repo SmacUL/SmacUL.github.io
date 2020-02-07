@@ -124,7 +124,7 @@ $conn->query($sql);
 
 ### 分离 SQL 部分与数据部分
 
-利用 Prepared SQL Statement 来提前做好数据的占位, 也就是在一开始将 SQL 部分和数据部分分离, 防止数据部分危险的内容与 SQL 部分结合, 串改本意. 
+利用 Prepared SQL Statement 来提前做好数据的占位, 也就是在一开始将 SQL 部分和数据部分分离, 防止数据部分危险的内容与 SQL 部分结合, 篡改本意. 
 
 
 
