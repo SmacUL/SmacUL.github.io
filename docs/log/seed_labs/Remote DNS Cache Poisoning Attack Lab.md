@@ -1,6 +1,6 @@
 # Remote DNS Cache Poisoning Attack Lab
 
-## 实验环境
+## Pre-Experiment
 
 我们需要三台虚拟机, 一台作为 DNS 服务器, 一台为攻击者, 一台为受害者. 
 
@@ -78,22 +78,20 @@ sudo resolvconf -u
 
 dig 命令是常用的域名查询工具，可以用来测试域名系统工作是否正常。
 
-## 实验任务
 
-狸猫换太子. 
 
-### T1 Remote Cache Poisoning
+## T1 Remote Cache Poisoning
 
 *Kaminsky attack*
 
-#### T1.1 Spoofing DNS request
+### T1.1 Spoofing DNS request
 
 伪装 DNS 请求. 
 
 [脚本 udp.c](https://seedsecuritylabs.org/Labs_16.04/Networking/DNS_Remote/udp.c)
 
 
-#### T1.2 Spoofing DNS Replies
+### T1.2 Spoofing DNS Replies
 伪装 DNS 响应. 
 
-#### T1.3 The Kaminsky Attack
+### T1.3 The Kaminsky Attack

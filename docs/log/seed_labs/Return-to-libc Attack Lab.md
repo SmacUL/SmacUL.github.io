@@ -1,12 +1,12 @@
 # Return-to-libc Attack Lab
 
+## Pre-Experiment
+
 Day one 中有一个实验, *Buffer-Overflow Vulnerability lab* 应该是和这个实验承接的, 都属于缓冲区溢出攻击. 之前的实验主要利用了可运行栈来展开攻击, 这个实验的主题就是 *Return-to-libc attack*, 一个新的方向. 
 
 ::: danger 有问题
 - 
 :::
-
-## 预备知识
 
 - 汇编基础  
 [阮一峰-汇编语言入门教程](http://www.ruanyifeng.com/blog/2018/01/assembly-language-primer.html)
@@ -16,27 +16,26 @@ Day one 中有一个实验, *Buffer-Overflow Vulnerability lab* 应该是和这�
 
 <!-- ## 实验环境 -->
 
-## 实验任务
 
-### Turning off countermeasures
+## Turning off countermeasures
 
 关闭相关防御措施. 
 
-#### Address Space Randomization 
+### Address Space Randomization 
 系统自带的地址空间随机化的机制. 
 
 ``` sh
 sudo sysctl -w kernel.randomize_va_space=0
 ```
 
-#### The StackGuard Protection Scheme
+### The StackGuard Protection Scheme
 
 编译 C 文件的时候让 GCC 关闭栈保护
 ``` sh
 gcc -fno-stack-protector example.c
 ```
 
-#### Non-Executable Stack
+### Non-Executable Stack
 不可执行栈. 
 
 ``` sh
@@ -46,7 +45,7 @@ gcc -z noexecstack -o test test.c
 
 [参考](https://blog.csdn.net/zither/article/details/443603)
 
-#### Configuring /bin/sh (Ubuntu 16.04 VM only)
+### Configuring /bin/sh (Ubuntu 16.04 VM only)
 
 Ubuntu 16.04 会阻止 Set-UID 应用程序, Set-UID 是啥
 
@@ -54,7 +53,7 @@ Ubuntu 16.04 会阻止 Set-UID 应用程序, Set-UID 是啥
 
 Ubuntu Shell 都有哪些 
 
-### The Vulnerable Program
+## The Vulnerable Program
 
 这里给出一个存在隐患的程序 retlib.c . 之间创建在共享文件夹中吧, 方便两头修改. 
 ``` c
@@ -103,7 +102,7 @@ sudo chmod 4755 retlib
 ?
 :::
 
-### T1 Finding out the addresses of libc functions
+## T1 Finding out the addresses of libc functions
 
 在关闭随机内存地址的保护机制后, 找出 libc 库 中方法在内存中的地址. 
 利用 GDB 工具可以找到 `system` 与 `exit` 方法. 
@@ -122,7 +121,7 @@ p exit
 
 更换文件, 修改文件的用户所有, 切换 shell, 都会导致地址出现变化. 
 
-### T2 Putting the shell string in the memory
+## T2 Putting the shell string in the memory
 
 shell 是用户与系统之间交互的界面, 它是程序, 系统工作时就是一个进程. 
 
@@ -159,7 +158,7 @@ gcc -o task2-1 task2-1.c && ./task2-1
 ```
 同一个 shell 变量的地址在不同程序中打印出的结果不一致, 但很接近. 
 
-### T3 Exploiting the buffer-overflow vulnerability
+## T3 Exploiting the buffer-overflow vulnerability
 
 当前用户已经能够使用 sudo 权限, 但是无法进入到 root 环境中. 
 
@@ -198,7 +197,8 @@ sudo 指令应该是在自己的用户环境下使用 root 权限; 如果直接�
 那么 X Y Z 是不是应该为 24 28 32 这三个数字的组合? 没人谈谈这个三个数字的故事么. 
 :::
 
-下面这一段是没有什么问题的. 
+### 一个可能的答案
+
 ``` c
 #include <stdlib.h>
 #include <stdio.h>
@@ -227,7 +227,7 @@ int main(int argc, char **argv) {
 
 我先做到这吧, 问题太硬了. 
 
-#### 我又回来了
+### 我又回来了
 
 在 *Buffer-Overflow Vulnerability Lab* 实验指导的 Guidelines 有这么一幅图: 
 
@@ -251,17 +251,17 @@ retlib 从 badfile 中一共读取了 300 长度的内容 (可能实际没有这
 
 虽然能够大致解释, 但是我仍然看不到 `#` 的 shell, 后面的 T4 T5 T6 也没办法直接解决, 有一种便秘的感觉. 
 
-### T4 Turning on address randomization
+## T4 Turning on address randomization
 
 启动内存地址随机化机制, 重新攻击. 
 ``` sh
 sudo sysctl -w kernel.randomize_va_space=2
 ```
 
-### T5 Defeat Shell’s countermeasure
+## T5 Defeat Shell’s countermeasure
 
 
 
-### T6 Defeat Shell’s countermeasure without putting zeros in input
+## T6 Defeat Shell’s countermeasure without putting zeros in input
 
 

