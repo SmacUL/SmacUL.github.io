@@ -128,6 +128,7 @@ module.exports = {
                 ['Cross-Site Scripting Attack', 'Cross-Site Scripting Attack'],
                 ['SQL Injection Attack Lab', 'SQL Injection Attack Lab'],
                 ['Buffer-Overflow Vulnerability Lab', 'Buffer-Overflow Vulnerability Lab'],
+                ['Local DNS Attack Lab', 'Local DNS Attack Lab'],
                 ['Remote DNS Cache Poisoning Attack Lab', 'Remote DNS Cache Poisoning Attack Lab'],
                 ['Android Repackaging Attack Lab', 'Android Repackaging Attack Lab'],
                 ['Return-to-libc Attack Lab', 'Return-to-libc Attack Lab'],
