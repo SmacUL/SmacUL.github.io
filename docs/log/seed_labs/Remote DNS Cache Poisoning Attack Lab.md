@@ -4,9 +4,9 @@
 
 我们需要三台虚拟机, 一台作为 DNS 服务器, 一台为攻击者, 一台为受害者. 
 
-- DNS 服务器: 10.0.2.15
-- 攻击者 01 机: 10.0.2.5
-- 受害者 02 机: 10.0.2.4
+- DNS 服务器: 10.0.2.16
+- 攻击者 00 机: 10.0.2.14
+- 受害者 01 机: 10.0.2.13
 
 ### 配置 DNS 服务器
 
@@ -62,9 +62,9 @@ sudo service bind9 restart
 ### 配置用户虚拟机
 
 #### 配置
-设置用户虚拟机的本地 DNS 服务器为我们之前设置的那个. `/etc/resolv.conf` 文件可以做到这个. 修改一下 `nameserver 10.0.2.15`. 
+设置用户虚拟机的本地 DNS 服务器为我们之前设置的那个. `/etc/resolv.conf` 文件可以做到这个. 修改一下 `nameserver 10.0.2.16`. 
 
-但是 DHCP 会覆盖这个文件, 所以, 修改文件 `/etc/resolvconf/resolv.conf.d/head`, 添加 `nameserver 10.0.2.15`. 完事生效配置文件: 
+但是 DHCP 会覆盖这个文件, 所以, 修改文件 `/etc/resolvconf/resolv.conf.d/head`, 添加 `nameserver 10.0.2.16`. 完事生效配置文件: 
 
 ``` sh
 sudo resolvconf -u
@@ -74,10 +74,9 @@ sudo resolvconf -u
 
 使用 dig 指令, 可以看到: 
 ![](/note/img/2020-02-09-09-42-18.png)
-在 `SERVER` 中我们可以看到 DNS 服务器的 IP. 
+在 `SERVER` 中我们可以看到 DNS 服务器的 IP (图中 .15 修正为 .16). 
 
 dig 命令是常用的域名查询工具，可以用来测试域名系统工作是否正常。
-
 
 
 ## T1 Remote Cache Poisoning
@@ -95,3 +94,9 @@ dig 命令是常用的域名查询工具，可以用来测试域名系统工作�
 伪装 DNS 响应. 
 
 ### T1.3 The Kaminsky Attack
+
+## T2 Result Verification
+
+### Use a Real Domain Name
+
+### Use A Fake Domain Name
