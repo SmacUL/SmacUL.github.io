@@ -17,6 +17,8 @@ Public Key Infrastructure PKI 是一种非常经典的解决方案.
 
 在这个实验中, 我们还将使用到 openssl 命令和库.
 
+[实验指导](https://seedsecuritylabs.org/Labs_16.04/PDF/Crypto_PKI.pdf)
+
 ## T1 Becoming a Certification Authority (CA)
 
 在这个实验中, 我们需要创建 digital certificates, 我们自己做自己的 CA. 然后使用这个 CA 来给别的什么东西提供验证服务. 
@@ -68,6 +70,10 @@ $ openssl genrsa -aes128 -out server.key 1024
 ``` sh 
 $ openssl rsa -in server.key -text
 ```
+
+::: tip
+指令 `openssl rsa -in server.key -out server.key.unsecure` 可以获得免密的 server key. 
+:::
 
 ### T1.2 Generate a Certificate Signing Request (CSR)
 
@@ -178,23 +184,6 @@ $ sudo service apache2 restart
 ```
 使用 HTTPS 协议访问 `https://seedpkilab2018.com` 应该再次可以看见 index.html 中内容.
 
-<!-- --- 
-
-ATC: 我们可能需要部署 Apache. 可能需要检查 apache 是否支持 HTTPS Protocol. 我们的任务是按照实验所给的示例, 部署 SEEDPKILab2018.com 
-
-完事, 我们需要配置 Apache. 
-Seed Lab 需要的是 example.com, 这样就意味着我们需要配置 mysql. 
-然后重复之前的实验. 
-
-ATC 配置, 问题很多. 
-在 `/etc/apache2/sites-available` 这个目录中包含了需要的项目, 提到 VirtualHost 做什么. 
-为了增加一个 HTTP website, 我们添加一个 VirtualHost 输入文件: 000-default.conf ???
-
-然后我们需要添加 VirtualHost 输入到 *default-ssl.conf* 文件(在上面那个啥?)
-
-理论上, 这步完成之后, 浏览器与 Server 之间的通信就会被编码 (加密?)
-是浏览器与 Server 之间的全部通信被加密, 还是一部分? 我感觉是一部分.  -->
-
 ## T5 Launching a Man-In-The-Middle Attack
 
 这一步主要展示: PKI 如何打败中间人攻击. 
@@ -216,17 +205,23 @@ ATC: 这里需要作出一个假设, 用户实际访问的是 example.com 这个
 
 我们的目标是这样的: 当一个用户打算访问 example.com 的时候, 我们把他引到自己的 server, hosts 了一个假的 website for example.com. 然后他们可能在者之间写些什么东西. 
 
+模仿 T4 中的操作, 创建一个 `www.apple.com` 的 ssl server. 
+
+
 ### T5.2 Becoming the man in the middle
 
-成为那个中间人. 中间人是不是意味着需要有好多 docker. 
-可以攻击路由或者攻击 DNS. 
-
-这一步, 我们选择 DNS 攻击. 为了简化操作, 我们直接修改受害者的 `/etc/hosts`. 去模拟一个 DNS 缓存毒化攻击. 
+成为那个中间人. 可以攻击路由或者攻击 DNS. 这一步, 我们选择 DNS 攻击. 为了简化操作, 我们直接修改受害者的 `/etc/hosts`. 去模拟一个 DNS 缓存毒化攻击. 
 `<IP_Address> example.com`
-这里的 IP_Address 应该是 malicious server 的 ip, 那么 malicious server 上要不要装什么东西? 
+这里的 IP_Address 应该是 malicious server 的 ip. 
+
+``` sh
+10.0.2.14  www.apple.com
+```
 
 ### T5.3 Browse the target website
 重新浏览目标网站, 看看自己的浏览器说了什么. 
 
+浏览器表示: "警告: 面临潜在的安全风险." 没有任何 CA 对我们自己的 `www.apple.com` ssl server 颁发证书. 
+
 ## T6 Launching a Man-In-The-Middle Attack with a Compromised CA
-这里做出了一个假设, 就是我们的 CA 已经被人收买, 我们将模仿 T5 中的操作. 
+这里做出了一个假设, 就是我们的 CA 已经被人收买, 给 `www.apple.com` 创建 cert. 
