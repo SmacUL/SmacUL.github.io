@@ -133,6 +133,7 @@ module.exports = {
                 ['Remote DNS Cache Poisoning Attack Lab', 'Remote DNS Cache Poisoning Attack Lab'],
                 ['Android Repackaging Attack Lab', 'Android Repackaging Attack Lab'],
                 ['Return-to-libc Attack Lab', 'Return-to-libc Attack Lab'],
+                ['Heartbleed Attack Lab', 'Heartbleed Attack Lab'],
             ],
             '/self/log/': [
                 // '2020',
