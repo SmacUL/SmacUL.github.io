@@ -128,11 +128,13 @@ module.exports = {
                 ['Cross-Site Scripting Attack', 'Cross-Site Scripting Attack'],
                 ['SQL Injection Attack Lab', 'SQL Injection Attack Lab'],
                 ['Buffer-Overflow Vulnerability Lab', 'Buffer-Overflow Vulnerability Lab'],
+                ['Packet Sniffing and Spoofing Lab', 'Packet Sniffing and Spoofing Lab'],
                 ['Public-Key Infrastructure Lab', 'Public-Key Infrastructure Lab'],
                 ['Local DNS Attack Lab', 'Local DNS Attack Lab'],
                 ['Remote DNS Cache Poisoning Attack Lab', 'Remote DNS Cache Poisoning Attack Lab'],
                 ['Android Repackaging Attack Lab', 'Android Repackaging Attack Lab'],
                 ['Return-to-libc Attack Lab', 'Return-to-libc Attack Lab'],
+                ['Virtual Private Network (VPN) Lab', 'Virtual Private Network (VPN) Lab'],
                 ['Heartbleed Attack Lab', 'Heartbleed Attack Lab'],
             ],
             '/self/log/': [
