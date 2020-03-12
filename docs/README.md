@@ -52,6 +52,3 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
     CTF 赛题总结
 
 [Seed Labs](/log/seed_labs)
-
-
-wojiu kankan nengn buneng kandaoz ehjuhua 
