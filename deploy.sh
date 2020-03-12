@@ -25,8 +25,6 @@ git add *
 git commit -m 'code'
 git push -f origin code
 
-# python3 ./selfupdate.py
-
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
