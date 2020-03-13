@@ -1,4 +1,4 @@
-# Virtual Private Network (VPN) Lab
+# Virtual Private Network Lab
 
 
 ## Pre-Experiment

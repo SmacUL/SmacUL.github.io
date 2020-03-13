@@ -34,6 +34,7 @@ $ ./attack.py www.heartbleedlabelgg.com
 
 需要好好康康那个 attack.py. 
 
+![](/note/img/2020-03-13-10-37-06.png)
 
 ## T2 Find the Cause of the Heartbleed Vulnerability
 
@@ -50,18 +51,21 @@ $ ./attack.py www.heartbleedlabelgg.com -l 0x015B
 
 不断减少 *payload length* 的值, 服务端返回的心跳响应内容会有什么不同?
 
+内容会越来越少. 
+
 ### Q2.2
 
-寻找 *preload length* 的边界值, 当 *payload length* 低于这个边界值的时候, 服务端将不再返回 "额外的数据". 
-
-程序可能会提示: 
+寻找 *preload length* 的边界值, 当 *payload length* 低于这个边界值的时候, 服务端将不再返回 "额外的数据", 同时程序会提示: 
 > Server processed malformed Heartbeat, but did not return any extra data
+
+![](/note/img/2020-03-13-10-25-58.png)
 
 ## T3 Countermeasure and Bug Fix
 
 防止 Heart Bleed 问题的最好办法就是升级 openssl. 
 ``` sh
 $ sudo apt-get update
+# 底下这个操作应该可以不用, 花时间很长
 $ sudo apt-get upgrade
 ```
 
@@ -79,7 +83,10 @@ $ sudo apt-get upgrade
 
 ``` c
 struct {
-    HeartbeatMessageType type; // 1 byte: request or the response uint16 payload_length; // 2 byte: the length of the payload
+    // 信息类别 1B
+    HeartbeatMessageType type; 
+    // 负载长度 2B
+    response uint16 payload_length; 
     opaque payload[HeartbeatMessage.payload_length]; 
     opaque padding[padding_length];
 } HeartbeatMessage;
@@ -88,48 +95,44 @@ struct {
 下面的程序展示了产生心跳请求包, 生成心跳响应包的过程. 
 
 ``` c
-/* Allocate memory for the response, size is 1 byte
- * message type, plus 2 bytes payload length, plus
- * payload, plus padding
-*/
+// 为响应申请内容, 长度为: 1B 信息类别 + 2B 负载长度 + 负载 + padding
+// 这里是不是少了一句内存申请? 
+
+// 负载长度
 unsigned int payload;
-unsigned int padding = 16; /* Use minimum padding */
-// Read from type field first
+// 使用最小 padding
+unsigned int padding = 16; 
+// 先读取 类别区 (hbtype 应该是 信息类别), 之后指针前推, 指向 负载长度区
 hbtype = *p++; 
-/* After this instruction, the pointer
- * p will point to the payload_length field *.
-// Read from the payload_length field
-// from the request packet
+// n2s 函数从指针 p 读取 16b, 并且将值保存在 payload 中, 即将长度保存在 payload 中. 
 n2s(p, payload); 
 
-/* Function n2s(p, payload) reads 16 bits
-* from pointer p and store the value * in the INT variable "payload". */
-
-pl=p; // pl points to the beginning of the payload content
+// pl 指向了负载内容的开头
+pl=p; 
+// 如果类别为 心跳请求 TLS1_HB_REQUEST
 if (hbtype == TLS1_HB_REQUEST) {
-     unsigned char *buffer, *bp;
-     int r;
-     /* Allocate memory for the response, size is 1 byte
-* message type, plus 2 bytes payload length, plus
- * payload, plus padding
- */
-buffer = OPENSSL_malloc(1 + 2 + payload + padding); bp = buffer;
-// Enter response type, length and copy payload *bp++ = TLS1_HB_RESPONSE;
-s2n(payload, bp);
-// copy payload
-memcpy(bp, pl, payload); 
-/* pl is the pointer which
- * points to the beginning
- * of the payload content 
-*/
-bp += payload;
-// Random padding RAND_pseudo_bytes(bp, padding);
-// this function will copy the 3+payload+padding bytes
-// from the buffer and put them into the heartbeat response
-}
-// packet to send back to the request client side. OPENSSL_free(buffer);
-r = ssl3_write_bytes(s, TLS1_RT_HEARTBEAT, buffer,
+    unsigned char *buffer, *bp;
+    int r;
+    // 为响应申请内存缓冲区, 长度为: 1B 信息类别 + 2B 负载长度 + 负载 + padding 
+    buffer = OPENSSL_malloc(1 + 2 + payload + padding); 
+    // bp 指向缓冲区
+    bp = buffer;
+    // 向 buffer 输入 信息类别, 指针前移
+    *bp++ = TLS1_HB_RESPONSE;
+    // 向 buffer 中输入负载长度. 
+    s2n(payload, bp);
+    // 复制负载内容, pl 指向了 负载内容开头
+    memcpy(bp, pl, payload); 
+    // bp 指针继续前推
+    bp += payload;
+    // 随机 padding
+    RAND_pseudo_bytes(bp, padding);
+
+    // 这个方法将复制 {3B + payload + padding} 长度的缓冲内容到 心跳响应包中, 为何 OPENSSL_free 方法在前? 
+    OPENSSL_free(buffer);
+    r = ssl3_write_bytes(s, TLS1_RT_HEARTBEAT, buffer,
       3 + payload + padding);
+}
 ```
 
 
@@ -139,3 +142,31 @@ r = ssl3_write_bytes(s, TLS1_RT_HEARTBEAT, buffer,
 - 直接删掉 *payload length* 就完事大吉了. 
 
 我们需要对上面的讨论内容作出评论. 
+
+负载的标记长度大于负载实际长度时, 会出现 HeartBleed 这样的错误. 
+
+#### 在复制缓冲内容时缺乏边界检查
+
+``` c
+memcpy(bp, pl, payload); 
+```
+- `bp` 指向缓冲区开头
+- `pl` 指向负载区开头
+- `payload` 为请求包中标记的负载长度. 
+
+在复制缓冲内容时, 程序没有对实际的负载长度进行检查, 只是依赖于请求包中的标记. 这个说法没什么毛病. 
+
+---
+
+#### 缺少用户输入验证
+啥叫用户输入验证? 诸如 MD5? CheckSum? 
+
+---
+
+#### 直接删掉 *payload length* 
+
+直接删除是不是会影响网络底层数据包的切分? 
+
+--- 
+
+应该防止用户直接修改 *payload length* 以及 *pl*, 或者完善缓冲区的边界检查. 
