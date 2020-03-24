@@ -81,13 +81,12 @@ CSR 也就是证书签名申请? 包含了企业的公钥?
 CSR 会被送给 CA, CA 将生成秘钥的证书. 
 
 ``` sh
+# 这一步中要在 common_name 一条中输入 seedpkilab2018.com 绑定站点, 其他内容可以不填
 $ openssl req -new -key server.key -out server.csr -config openssl.cnf
 ```
 依据描述, certificate signing request 和 certificate authority 是一对的. 
 
 ### T1.3 Generating Certificates
-
-
 
 CSR file 需要有 CA 的签名才能产出证书. 
 在实验最开始的时候, 我们就有了自己的 CA. 
@@ -99,6 +98,8 @@ $ openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -config
 实验指导中给出了 如果 CA 拒绝生成证书的解决方案. 
 
 ![](/note/img/2020-02-23-11-23-57.png)
+
+
 
 
 ## T3 Deploying Certificate in an HTTPS Web Server

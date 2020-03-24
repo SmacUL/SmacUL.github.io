@@ -4,17 +4,43 @@ Docker 的两个主要的概念: 镜像与容器. 对应到 Java 中, 镜像等�
 
 所以后面的命令基本上都要考虑镜像和容器两方面. 
 
+## Docker 安装
+
+### Mac
+如果查询 Mac 下如何使用 Docker, 一定会有人建议使用 brew 来下载安装 Docker. 但是经过多次试验, 在 Catalina(10.15) 版本中, 使用 `brew install docker` 或 `brew cask install docker` 并不能获得可以正常启动的 Docker. 
+
+建议直接在 [Docker 官网](www.docker.com) 中直接下载 GUI 版的 Docker. 在使用之前先将其启动, 然后在 CMD 中的操作大家都是一样. 
+
+### Kali Linux
+
+目标是下载 docker-ce
+
+``` sh
+# 更新源
+$ sudo apt-get update
+# 安装系统工具
+$ sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+# 安装 GPG 证书
+$ curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+# 写入软件源信息
+$ sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+# 再次更新
+$ sudo apt-get -y update
+# 安装 docker
+$ sudo apt-get -y install docker-ce
+```
+
 ## Quick Start
 假设我们已经处理好了 Docker 的安装的问题. 
 
 ### 创建 Ubuntu 容器并运行
 ``` sh
 # 拉一个 Ubuntu 的镜像. 
-docker pull ubuntu
+$ docker pull ubuntu
 # 查看本地都有哪些镜像
-docker images ls
+$ docker images ls
 # 创建并运行一个名称为 MyUbuntu 的 Ubuntu 容器
-docker run -it --name MyUbuntu Ubuntu
+$ docker run -it --name MyUbuntu Ubuntu
 ```
 
 ### 关闭容器
@@ -22,17 +48,17 @@ docker run -it --name MyUbuntu Ubuntu
 # 退出与 Ubuntu 的交互界面
 $ exit
 # 查看所有容器的状态
-docker ps -a
+$ docker ps -a
 # 停止容器 MyUbuntu 活动
-docker stop MyUbuntu
+$ docker stop MyUbuntu
 ```
 
 ### 重启容器并执行任务
 ``` sh
 # 启动容器 MyUbuntu 活动
-docker start MyUbuntu
+$ docker start MyUbuntu
 # 进入 Ubuntu 的交互界面
-docker exec -it MyUbuntu /bin/bash
+$ docker exec -it MyUbuntu /bin/bash
 ```
 
 <!-- ## 几个比较重要的命令的总结
@@ -41,10 +67,10 @@ docker exec -it MyUbuntu /bin/bash
 - commit 可以看做是 run 的拟操作, 从一个容器生成一个镜像.
 - build 使用 Docker File 创建容器. -->
 
-## Mac 下使用 Docker 的建议
-如果查询 Mac 下如何使用 Docker, 一定会有人建议使用 brew 来下载安装 Docker. 但是经过多次试验, 在 Catalina(10.15) 版本中, 使用 `brew install docker` 或 `brew cask install docker` 并不能获得可以正常启动的 Docker. 
-
-建议直接在 [Docker 官网](www.docker.com) 中直接下载 GUI 版的 Docker. 在使用之前先将其启动, 然后在 CMD 中的操作大家都是一样. 
 
 ## 参考
-[docker 菜鸟教程](https://www.runoob.com/docker/docker-tutorial.html)
+[Docker 菜鸟教程](https://www.runoob.com/docker/docker-tutorial.html)
+
+[简书上的操作](https://www.jianshu.com/p/f43eb65c2d3b)
+
+[Docker 的网络介绍](https://www.cnblogs.com/wade-luffy/p/6594843.html)

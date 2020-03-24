@@ -81,7 +81,8 @@ module.exports = {
             ],
             '/tool/docker/': [
                 '',
-                // []
+                ['配置修改', '配置修改'],
+                ['Docker Compose', 'Docker Compose'],
             ],
             '/tool/git/': [
                 '',
@@ -110,6 +111,10 @@ module.exports = {
                 ['部署到 Github Page', '部署到 Github Page'],
                 ['简单装修', '简单装修'],
                 ['Vuepress 的伴侣', 'VuePress 的伴侣']
+            ],
+            '/tool/linux/': [
+                '',
+                ['Kali 帮助', 'Kali 帮助']
             ],
             '/log/news_crawler/': [
                 '',
