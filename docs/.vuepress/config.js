@@ -7,6 +7,11 @@ module.exports = {
     markdown: {
         lineNumbers: true
     },
+    plugins: {
+        'sitemap': {
+            hostname: 'https://SmacUL.github.io'
+        },
+    },
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
@@ -110,7 +115,8 @@ module.exports = {
                 // ['快速开始', '感受 VuePress'],
                 ['部署到 Github Page', '部署到 Github Page'],
                 ['简单装修', '简单装修'],
-                ['Vuepress 的伴侣', 'VuePress 的伴侣']
+                ['Vuepress 的伴侣', 'VuePress 的伴侣'],
+                ['拥抱搜索引擎', '拥抱搜索引擎']
             ],
             '/tool/linux/': [
                 '',
