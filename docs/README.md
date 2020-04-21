@@ -1,8 +1,8 @@
 ---
 home: true
-heroImage: '/assets/img/Logo.png'
+# heroImage: '/assets/img/Logo.png'
 heroText: 你 好
-tagline: 笔记  日志
+tagline: 天朗气清  有幸相遇
 actionText: 关于我 →
 actionLink: /self/
 footer: MIT Licensed | Copyright © 2019-present SmacUL
@@ -51,6 +51,7 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
     利用 Python 及爬虫工具获取今日头条的新闻数据
 
 [Bugku 刷题](/log/bugku)  
-    CTF 赛题总结
+    Bugku CTF 赛题总结
 
-[Seed Labs](/log/seed_labs)
+[Seed Labs](/log/seed_labs)   
+    雪城大学倒腾的一个安全实验平台, 基于虚拟机. 包含了 SQL 注入, 内存溢出等常见的漏洞及其攻击手段. 

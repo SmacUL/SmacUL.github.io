@@ -1,6 +1,6 @@
 # Seed Labs
 
-[Seed Labs](https://seedsecuritylabs.org/index.html) 是一个安全相关的实践网站. 网站中提供了一个实验平台, 基于 Ubuntu 的虚拟机, 里头包含了大概 5*8h 的实验量, [详见](https://seedsecuritylabs.org/workshops/agenda.html). 
+[Seed Labs](https://seedsecuritylabs.org/index.html) 是一个安全相关的实践网站. 网站中提供了一个实验平台, 基于 Ubuntu 的虚拟机, 里头包含了大概 5*8h (看看就好)的实验量, [详见](https://seedsecuritylabs.org/workshops/agenda.html). 
 
 ## 下载安装平台
 

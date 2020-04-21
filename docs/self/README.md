@@ -4,8 +4,8 @@ heroImage: '/assets/img/Logo.png'
 heroText: 我
 description: 一个不专业的万金油工具人
 # tagline: 
-actionText: 这些年的大事 →
-actionLink: /self/log/2020/
+# actionText: 这些年的大事 →
+# actionLink: /self/log/2020/
 
 features:
 - title: 技能
