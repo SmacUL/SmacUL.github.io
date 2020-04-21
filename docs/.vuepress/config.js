@@ -148,11 +148,11 @@ module.exports = {
                 ['Virtual Private Network Lab', 'Virtual Private Network Lab'],
                 ['Heartbleed Attack Lab', 'Heartbleed Attack Lab'],
             ],
-            '/self/log/': [
+            // '/self/log/': [
                 // '2020',
-                ['2020', '2020'],
-                ['2019', '2019'],
-            ],
+                // ['2020', '2020'],
+                // ['2019', '2019'],
+            // ],
             '/': [
                 '',
             ],
