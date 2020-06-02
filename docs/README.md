@@ -47,11 +47,16 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
     创建自己的个人主页. 
 
 ## Log
-[新闻数据爬取](/log/news_crawler)    
-    利用 Python 及爬虫工具获取今日头条的新闻数据
+
 
 [Bugku 刷题](/log/bugku)  
     Bugku CTF 赛题总结
 
 [Seed Labs](/log/seed_labs)   
     雪城大学倒腾的一个安全实验平台, 基于虚拟机. 包含了 SQL 注入, 内存溢出等常见的漏洞及其攻击手段. 
+
+[新闻推荐系统](/log/news_recommend)  
+    毕设项目, 包含数据爬虫与用户前后端系统.
+
+<!-- [新闻数据爬取](/log/news_crawler)    
+利用 Python 及爬虫工具获取今日头条的新闻数据 -->

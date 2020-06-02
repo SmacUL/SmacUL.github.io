@@ -24,11 +24,6 @@ module.exports = {
         lastUpdated: 'Last Updated',
 
         sidebar: {
-            '/project/': [
-                '',
-                // ['Python 爬虫--框架', 'Python 爬虫--框架']
-            ],
-
             '/basic/datastructure/': [
                 '',
                 ['排序', '排序']
@@ -147,6 +142,14 @@ module.exports = {
                 ['Return-to-libc Attack Lab', 'Return-to-libc Attack Lab'],
                 ['Virtual Private Network Lab', 'Virtual Private Network Lab'],
                 ['Heartbleed Attack Lab', 'Heartbleed Attack Lab'],
+            ],
+            '/log/news_recommend/': [
+                '',
+                ['数据库设计与实现', '数据库的设计与实现'],
+                ['数据爬虫的设计与实现', '数据爬虫的设计与实现'],
+                ['用户系统的设计与实现', '用户系统的设计与实现'],
+                ['推荐策略的设计与实现', '推荐策略的设计与实现'],
+                ['总结与展望', '总结与展望'], 
             ],
             // '/self/log/': [
                 // '2020',
