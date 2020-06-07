@@ -30,6 +30,19 @@ $ sudo apt-get -y update
 $ sudo apt-get -y install docker-ce
 ```
 
+### CentOS7 Linux
+
+系统为最小化安装. 
+
+``` sh
+# 安装 yum 配置工具
+$ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+# 添加 yum 的 Docker 源
+$ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# yum 下载安装 Docker
+$ sudo yum install docker-ce
+```
+
 ## Quick Start
 假设我们已经处理好了 Docker 的安装的问题. 
 

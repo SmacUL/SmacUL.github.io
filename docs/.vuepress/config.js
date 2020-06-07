@@ -115,7 +115,12 @@ module.exports = {
             ],
             '/tool/linux/': [
                 '',
-                ['Kali 帮助', 'Kali 帮助']
+                ['Kali 帮助', 'Kali 帮助'],
+                ['CentOS 帮助', 'CentOS 帮助']
+            ],
+            '/tool/kubernetes/': [
+                '',
+                ['Minikube', 'Minikube 与 Kubectl']
             ],
             '/log/news_crawler/': [
                 '',

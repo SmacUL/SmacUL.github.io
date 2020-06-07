@@ -1,4 +1,8 @@
-.theme-default-content:not(.custom) img {
+body {
+    font-family: -apple-system, Arial, "Microsoft Yahei", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+theme-default-content:not(.custom) img {
     max-width: 90%;
     display: block;
     margin: 15px auto;
@@ -46,20 +50,33 @@ h4 {
 //     color: #6a9e55
 // }
 
+// 一级标题
 .sidebar > .sidebar-links > li > a.sidebar-link {
-    font-size: 1.0em !important
+    font-size: 1.0em !important;
+    font-weight: 800 !important;
+    font-size: 12pt !important;
 }
 
+// 二级标题
 .sidebar-sub-headers a.sidebar-link {
-    font-size: 0.9em !important
+    font-size: 0.9em !important;
+    font-weight: 600 !important;
+    border-left: 1px !important;
+    font-size: 10pt !important;
+    padding-top: 0.50rem !important;
 }
 
 a.sidebar-link {
-    line-height: 1.2 !important
+    line-height: 1.2 !important;
+    
 }
 
-.sidebar-sub-headers a.sidebar-link {
-    padding-bottom: 0.50rem !important
+// 三级标题
+.sidebar-sub-headers .sidebar-sub-header .sidebar-sub-headers a.sidebar-link {
+    padding-bottom: 0.50rem !important;
+    font-weight: 400 !important;
+    padding-left: 30px !important;
+    font-size: 8pt !important;
 }
 
 // .home .hero img {
