@@ -8,10 +8,10 @@ actionLink: /self/
 footer: MIT Licensed | Copyright © 2019-present SmacUL
 ---
 
-## 万恶之源
-[数据结构与算法](/basic/datastructure/)
+<!-- ## 万恶之源 -->
+<!-- [数据结构与算法](/basic/datastructure/) -->
 
-[计算机网络](/basic/network/)
+<!-- [计算机网络](/basic/network/) -->
 
 ## 语言与规则
 [Java](/lang/java)
@@ -23,42 +23,53 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 [CSS](/lang/css)
 
 ## 工具
-[MySQL](/tool/mysql)  
-    包含 SQL 的相关内容.   
+<!-- [MySQL](/tool/mysql)  
+    包含 SQL 的相关内容.    -->
 
 <!-- - [Webpack](./tool/webpack/文档阅读)  -->
-[Git](/tool/git/Git)   
-    包含 Git 与 GitHub.   
+<!-- [Git](/tool/git/Git)   
+    包含 Git 与 GitHub.    -->
 
-[Maven](/tool/maven/Maven)  
+<!-- [Maven](/tool/maven/Maven)   -->
 
-[Docker](/tool/docker)
+<!-- [Docker](/tool/docker) -->
 
-[Kubernetes](/tool/kubernetes)
+<!-- [Kubernetes](/tool/kubernetes) -->
 
-[Spring](/tool/spring)  
+<!-- [Spring](/tool/spring)   -->
 
-[MyBatis](/tool/mybatis/MyBatis)  
+<!-- [MyBatis](/tool/mybatis/MyBatis)   -->
 
-[Linux](/tool/linux)
+<!-- [Linux](/tool/linux) -->
 
 <!-- - [Hibernate](./tool/hibernate/Hibernate) -->
-[Vue CLI](/tool/vuecli)  
+<!-- [Vue CLI](/tool/vuecli)   -->
 
 [VuePress](/tool/vuepress)    
     创建自己的个人主页. 
 
-## Log
 
 
-[Bugku 刷题](/log/bugku)  
-    Bugku CTF 赛题总结
+
+## 阅读
+
+[瞬间之美 -- Web 界面设计如何让用户动心](/read/瞬间之美)  
+    [美] Robert Hoekmon, Jr. 
+
+<!-- [test](/read/test) -->
+
+
+## 杂项
+
+
+<!-- [Bugku 刷题](/log/bugku)  
+    Bugku CTF 赛题总结 -->
 
 [Seed Labs](/log/seed_labs)   
     雪城大学倒腾的一个安全实验平台, 基于虚拟机. 包含了 SQL 注入, 内存溢出等常见的漏洞及其攻击手段. 
 
 [新闻推荐系统](/log/news_recommend)  
-    毕设项目, 包含数据爬虫与用户前后端系统.
+    毕设项目的设计与说明, 包含数据爬虫与用户前后端系统.
 
 <!-- [新闻数据爬取](/log/news_crawler)    
 利用 Python 及爬虫工具获取今日头条的新闻数据 -->
