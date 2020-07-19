@@ -32,7 +32,7 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 
 <!-- [Maven](/tool/maven/Maven)   -->
 
-<!-- [Docker](/tool/docker) -->
+[Docker](/tool/docker)
 
 <!-- [Kubernetes](/tool/kubernetes) -->
 
@@ -48,22 +48,15 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 [VuePress](/tool/vuepress)    
     创建自己的个人主页. 
 
+<!-- ## 阅读 -->
 
-
-
-## 阅读
-
-[瞬间之美 -- Web 界面设计如何让用户动心](/read/瞬间之美)  
-    [美] Robert Hoekmon, Jr. 
+<!-- [瞬间之美 -- Web 界面设计如何让用户动心](/read/瞬间之美)  
+    [美] Robert Hoekmon, Jr.  -->
 
 <!-- [test](/read/test) -->
 
 
 ## 杂项
-
-
-<!-- [Bugku 刷题](/log/bugku)  
-    Bugku CTF 赛题总结 -->
 
 [Seed Labs](/log/seed_labs)   
     雪城大学倒腾的一个安全实验平台, 基于虚拟机. 包含了 SQL 注入, 内存溢出等常见的漏洞及其攻击手段. 
@@ -71,5 +64,5 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 [新闻推荐系统](/log/news_recommend)  
     毕设项目的设计与说明, 包含数据爬虫与用户前后端系统.
 
-<!-- [新闻数据爬取](/log/news_crawler)    
-利用 Python 及爬虫工具获取今日头条的新闻数据 -->
+[那些年用过的 Python 操作](/log/python_operation)  
+    那些年的 Python 操作

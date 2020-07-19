@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# 设置代理
+set https_proxy=http://127.0.0.1:1086
+set http_proxy=http://127.0.0.1:1086
+
 # 确保脚本抛出遇到的错误
 set -e
 

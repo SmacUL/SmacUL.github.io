@@ -83,6 +83,8 @@ module.exports = {
                 '',
                 ['配置修改', '配置修改'],
                 ['Docker Compose', 'Docker Compose'],
+                ['Dockerfile', 'Dockerfile'],
+                ['Docker Harbor', 'Docker Harbor']
             ],
             '/tool/git/': [
                 '',
@@ -133,13 +135,13 @@ module.exports = {
             //     ['新闻数据爬虫', '一开始的样子'],
             //     ['新闻数据爬虫-修改', '2020-01-05 修改'],
             // ],
-            '/log/bugku/': [
-                '',
-                ['逆向', '逆向'],
-                ['杂项', '杂项'],
-                ['Web', 'Web'],
-                ['分析', '分析'],
-            ],
+            // '/log/bugku/': [
+            //     '',
+            //     ['逆向', '逆向'],
+            //     ['杂项', '杂项'],
+            //     ['Web', 'Web'],
+            //     ['分析', '分析'],
+            // ],
             '/log/seed_labs/': [
                 '',
                 ['Cross-Site Scripting Attack', 'Cross-Site Scripting Attack'],
@@ -161,6 +163,9 @@ module.exports = {
                 ['用户系统的设计与实现', '用户系统的设计与实现'],
                 ['推荐策略的设计与实现', '推荐策略的设计与实现'],
                 ['总结与展望', '总结与展望'], 
+            ],
+            '/log/python_operation/': [
+                '',
             ],
             '/': [
                 '',
