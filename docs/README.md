@@ -64,5 +64,8 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 [新闻推荐系统](/log/news_recommend)  
     毕设项目的设计与说明, 包含数据爬虫与用户前后端系统.
 
-[那些年用过的 Python 操作](/log/python_operation)  
-    那些年的 Python 操作
+[音频字幕生成器](/log/script_with_voice)   
+    依赖 Google Text-To-Speech API, 自动生成带音频的字幕视频
+
+<!-- [那些年用过的 Python 操作](/log/python_operation)  
+    那些年的 Python 操作 -->

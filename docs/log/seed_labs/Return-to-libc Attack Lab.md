@@ -4,8 +4,8 @@
 
 Day one 中有一个实验, *Buffer-Overflow Vulnerability lab* 应该是和这个实验承接的, 都属于缓冲区溢出攻击. 之前的实验主要利用了可运行栈来展开攻击, 这个实验的主题就是 *Return-to-libc attack*, 一个新的方向. 
 
-::: danger 有问题
-- 
+::: warning 有问题
+后面有一些实验内容, 因为水平有限没有完成. 一些内容的描述存在错误. 仅做参考. 
 :::
 
 - 汇编基础  
@@ -250,6 +250,10 @@ retlib 从 badfile 中一共读取了 300 长度的内容 (可能实际没有这
 :::
 
 虽然能够大致解释, 但是我仍然看不到 `#` 的 shell, 后面的 T4 T5 T6 也没办法直接解决, 有一种便秘的感觉. 
+
+::: tip 关于 root shell 没有成功获取
+或许可以考虑一下 VM Ware, 虽然我也不知道原理. 
+:::
 
 ## T4 Turning on address randomization
 

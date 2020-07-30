@@ -164,9 +164,14 @@ module.exports = {
                 ['推荐策略的设计与实现', '推荐策略的设计与实现'],
                 ['总结与展望', '总结与展望'], 
             ],
-            '/log/python_operation/': [
+            // '/log/python_operation/': [
+            //     '',
+            // ],
+
+            '/log/script_with_voice/': [
                 '',
             ],
+
             '/': [
                 '',
             ],
