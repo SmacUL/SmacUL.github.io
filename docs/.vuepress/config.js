@@ -14,9 +14,9 @@ module.exports = {
     },
     themeConfig: {
         nav: [
-            { text: 'Home', link: '/' },
+            { text: '主页', link: '/' },
             // { text: 'Project', link: '/project/'},
-            { text: 'About Me', link: '/self/'},
+            { text: '关于我', link: '/self/'},
             { text: 'GitHub', link: 'https://github.com/SmacUL' },
         ],
 
@@ -27,11 +27,6 @@ module.exports = {
             '/basic/datastructure/': [
                 '',
                 ['排序', '排序']
-            ],
-            '/basic/network/': [
-                '',
-                ['科学上网', '科学上网'],
-                ['虚拟机的网络通信', '虚拟机的网络通信']
             ],
             '/lang/css/': [
                 '',
@@ -109,16 +104,10 @@ module.exports = {
             ],
             '/tool/vuepress/': [
                 '',
-                // ['快速开始', '感受 VuePress'],
                 ['部署到 Github Page', '部署到 Github Page'],
                 ['简单装修', '简单装修'],
                 ['Vuepress 的伴侣', 'VuePress 的伴侣'],
                 ['拥抱搜索引擎', '拥抱搜索引擎']
-            ],
-            '/tool/linux/': [
-                '',
-                ['Kali 帮助', 'Kali 帮助'],
-                ['CentOS 帮助', 'CentOS 帮助']
             ],
             '/tool/kubernetes/': [
                 '',
@@ -130,18 +119,6 @@ module.exports = {
                 // ['test', 'test']
             ],
 
-            // '/log/news_crawler/': [
-            //     '',
-            //     ['新闻数据爬虫', '一开始的样子'],
-            //     ['新闻数据爬虫-修改', '2020-01-05 修改'],
-            // ],
-            // '/log/bugku/': [
-            //     '',
-            //     ['逆向', '逆向'],
-            //     ['杂项', '杂项'],
-            //     ['Web', 'Web'],
-            //     ['分析', '分析'],
-            // ],
             '/log/seed_labs/': [
                 '',
                 ['Cross-Site Scripting Attack', 'Cross-Site Scripting Attack'],
@@ -170,6 +147,12 @@ module.exports = {
 
             '/log/script_with_voice/': [
                 '',
+            ],
+
+            '/log/vm_with_linux/': [
+                '',
+                ['VM Ware 的网络模式', 'VM Ware 的网络模式'],
+                ['遇到的 CentOS 的网络问题', '遇到的 CentOS 的网络问题']
             ],
 
             '/': [
