@@ -76,6 +76,8 @@ ens33: 192.168.1.108/24
 
 ### 意外的情况
 
+在宿主机使用 WiFi 连接的情况下, 将虚拟机的网络状态从 NAT 切换为桥接状态时, 虚拟机的网络状态并不会立刻改变, 需要等一段时间. 网线连接时体验会好得多. 
+
 如果在给虚拟机添加网络适配器后, 没有达到预期的效果, 检查一下 `systemctl status network.service` 看看有没有错误, 比如说 `failed to start LSB`. 可以尝试重启 NetworkManager `systemctl restart NetworkManager` 与 network.service `systemctl restart network.service`. 
 
 

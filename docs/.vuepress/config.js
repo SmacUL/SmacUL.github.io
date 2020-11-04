@@ -79,7 +79,8 @@ module.exports = {
                 ['配置修改', '配置修改'],
                 ['Docker Compose', 'Docker Compose'],
                 ['Dockerfile', 'Dockerfile'],
-                ['Docker Harbor', 'Docker Harbor']
+                ['Docker Harbor', 'Docker Harbor'],
+                ['历史问题', '历史问题']
             ],
             '/tool/git/': [
                 '',
@@ -152,7 +153,8 @@ module.exports = {
             '/log/vm_with_linux/': [
                 '',
                 ['VM Ware 的网络模式', 'VM Ware 的网络模式'],
-                ['遇到的 CentOS 的网络问题', '遇到的 CentOS 的网络问题']
+                ['遇到的 CentOS 的网络问题', '遇到的 CentOS 的网络问题'],
+                ['CentOS7 安装 OpenVPN', 'CentOS7 安装 OpenVPN']
             ],
 
             '/': [

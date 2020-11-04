@@ -37,8 +37,9 @@ $ sudo apt-get -y install docker-ce
 ``` sh
 # 安装 yum 配置工具
 $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-# 添加 yum 的 Docker 源
-$ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# 添加 yum 的 Docker 源 (国内 阿里)
+$ sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+$ sudo yum update
 # yum 下载安装 Docker
 $ sudo yum install docker-ce
 ```

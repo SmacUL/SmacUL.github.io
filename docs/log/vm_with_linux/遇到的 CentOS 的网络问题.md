@@ -8,9 +8,9 @@
 ``` sh
 # 也有可能不是 ifcfg-ens33 文件, 看情况
 $ vi /etc/sysconfig/network-scripts/ifcfg-ens33
-# 修改 ens33 配置文件最后一行如下:
-ONBOOT=yes
-# 保存退出
+    # 修改 ens33 配置文件最后一行如下:
+    ONBOOT=yes
+    # 保存退出
 ```
 
 ## 无法重启 network 服务
@@ -25,3 +25,26 @@ ONBOOT=yes
 $ sudo systemctl stop firewalld
 $ sudo systemctl disable firewalld
 ```
+
+## CentOS6 桥接模式的虚拟机转移后的网络问题
+
+将 CentOS6 桥接模式, 且固定了 IP 的虚拟机转移到通网段下的另一台宿主机之后, eth* 网卡会出点问题, network.service 也无法重启. 访问一下 `/etc/sysconfig/network-script/ifcfg-eth0`, 可以发现转移虚拟机之后, 虽然 `ip addr` 显示的网卡名称作了修改, 但是 `ifcfg-eth0` 中的网卡配置信息没有跟着改过来, 需要手动修改设备名称与 Mac 地址 (都以 `ip addr` 的显示结果为准), 最后重启 network.service .   
+
+## 固定 IP
+
+### 桥接模式
+
+还是我们的老朋友 `/etc/sysconfig/network-scripts/` 下的 `ifcfg-ens*` 或是 `ifcfg-eth*`. 
+1. 将 `DEFROUTE="yes"` 修改为 `DEFROUTE="static"`; 
+1. 添加固定 IP 地址 `IPADDR="192.168.1.**"` (假设在 192.168.1.0/24 网段下); 
+1. 添加网关 `GATEWAY="192.168.1.1"`, 网关信息可以参考宿主机的网络配置; 
+1. 添加 DNS `DNS1="114.114.114.114"`, 这也可以参考宿主机的网络配置, 这个 DNS 应该是移动联动的 DNS 服务器地址. 
+
+接下来修改 `/etc/sysconfig/network`, 
+``` sh
+NETWORKING=yes
+HOSTNAME=[随便写, 例如 localhost]
+GATEWAY=192.168.1.1 # 照着上面的网关写
+```
+
+修改完毕后, 重启 network 服务, 可以使用 `ip addr` 与 `ping` 命令检查网络情况.
