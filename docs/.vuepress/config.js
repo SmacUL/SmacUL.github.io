@@ -85,7 +85,8 @@ module.exports = {
             '/tool/git/': [
                 '',
                 ['Git', 'Git 的基本使用'],
-                ['Github', 'GitHub']
+                ['Github', 'GitHub'],
+                ['GitLab', 'GitLab'],
             ],
 
             '/tool/hibernate/': [
