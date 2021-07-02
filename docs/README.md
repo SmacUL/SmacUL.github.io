@@ -1,8 +1,8 @@
 ---
 home: true
-# heroImage: '/assets/img/Logo.png'
-heroText: 你 好
-tagline: 天朗气清  有幸相遇
+heroImage: '/assets/img/Logo.png'
+heroText: 你好
+tagline: 天朗气清 有幸相遇
 actionText: 关于我 →
 actionLink: /self/
 footer: MIT Licensed | Copyright © 2019-present SmacUL
@@ -17,7 +17,7 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 [Java](/lang/java)
 
 [JavaScript](/lang/js)   
-包含现行 JS 的版本内容与 ES6 的内容
+
 <!-- - [Python](./lang/python) -->
 
 [CSS](/lang/css)
@@ -41,6 +41,7 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
 <!-- [MyBatis](/tool/mybatis/MyBatis)   -->
 
 <!-- - [Hibernate](./tool/hibernate/Hibernate) -->
+
 <!-- [Vue CLI](/tool/vuecli)   -->
 
 [VuePress](/tool/vuepress)    
@@ -66,4 +67,16 @@ footer: MIT Licensed | Copyright © 2019-present SmacUL
     依赖 Google Text-To-Speech API, 自动生成带音频的字幕视频
 
 [VMWare 与 Linux 的故事](/log/vm_with_linux)  
-    VMWare 与 Linux 宝宝的简单操作
+    VMWare, Linux, 网络
+
+
+<!-- <style>
+    .home .hero img {
+        margin: 3rem 0rem 0rem 0rem !important; 
+        display: float !important;
+    }
+
+    .home .hero h1 {
+        display: float !important;
+    }
+</style> -->
